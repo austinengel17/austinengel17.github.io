@@ -27,7 +27,7 @@
     </script>
 
 <body>
-    <h1>Milestone D3 Diagram</h1>
+    <h4>D3 Visualization | Milestones</h4>
     <svg width="1298" height="1000"></svg>
     <script>
       var yAxis = 150;
@@ -51,20 +51,20 @@
         .data(milestoneIntervalArr)
         .enter()
         .append("g")
-        .attr("transform", function(d, i) { return "translate(" + (10 + i * 200) + ", " + yAxis + ")"; });
+        .attr("transform", function(d, i) { return "translate(" + (10 + i * 150) + ", " + yAxis + ")"; });
 
       group.append("circle")
       .attr("cx", 30)
       .attr("cy", 0)
-      .attr("r", 30)
+      .attr("r", 10)
       .attr("fill", "red")
       .attr("id", function(d, i){return "circle-"+(i+1);})
       .on("click", handleClick);
 
       group.append("line")
-      .attr("x1", 75)
+      .attr("x1", 50)
       .attr("y1", 0)
-      .attr("x2", 100)
+      .attr("x2", 80)
       .attr("y2", 0)
       .attr("stroke", "black")
       .attr("stroke-width", 1);
@@ -73,15 +73,15 @@
       group.append("text")
       .text(function(d) {return d;})
       .attr("width", 40)
-      .attr("x", 120) // Set the x-coordinate
+      .attr("x", 100) // Set the x-coordinate
       .attr("y", 5)
       .attr("text-anchor", "middle");
 
 
       group.append("line")
-      .attr("x1", 140)
+      .attr("x1", 120)
       .attr("y1", 0)
-      .attr("x2", 180)
+      .attr("x2", 150)
       .attr("y2", 0)
       .attr("stroke", "black")
       .attr("stroke-width", 1)
@@ -96,11 +96,11 @@
 
       //add final milestone circle
       milestoneNGroup = svg.append("g")
-        .attr("transform", function(d, i) { return "translate(" + (10 + milestoneIntervalArr.length * 200) + ", " + yAxis + ")"; });
+        .attr("transform", function(d, i) { return "translate(" + (10 + milestoneIntervalArr.length * 150) + ", " + yAxis + ")"; });
       milestoneNGroup.append("circle")
         .attr("cx", 30)
         .attr("cy", 0)
-        .attr("r", 30)
+        .attr("r", 10)
         .attr("fill", "red")
         .attr("id", function(d, i){return "circle-"+(milestoneIntervalArr.length+1);})
         .on("click", handleClick);
