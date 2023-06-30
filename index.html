@@ -30,7 +30,7 @@
     <h4>D3 Visualization | Milestones</h4>
     <svg width="1298" height="1000"></svg>
     <script>
-      var yAxis = 150;
+      var yAxis = 100;
       var xStart = 70;
       const svg = d3.select("svg");
       //create arrow marker
@@ -51,7 +51,7 @@
         .data(milestoneIntervalArr)
         .enter()
         .append("g")
-        .attr("transform", function(d, i) { return "translate(" + (10 + i * 150) + ", " + yAxis + ")"; });
+        .attr("transform", function(d, i) { return "translate(" + (10 + i * 140) + ", " + yAxis + ")"; });
 
       group.append("circle")
       .attr("cx", 30)
@@ -64,7 +64,7 @@
       group.append("line")
       .attr("x1", 50)
       .attr("y1", 0)
-      .attr("x2", 80)
+      .attr("x2", 70)
       .attr("y2", 0)
       .attr("stroke", "black")
       .attr("stroke-width", 1);
@@ -73,15 +73,15 @@
       group.append("text")
       .text(function(d) {return d;})
       .attr("width", 40)
-      .attr("x", 100) // Set the x-coordinate
+      .attr("x", 90) // Set the x-coordinate
       .attr("y", 5)
       .attr("text-anchor", "middle");
 
 
       group.append("line")
-      .attr("x1", 120)
+      .attr("x1", 110)
       .attr("y1", 0)
-      .attr("x2", 150)
+      .attr("x2", 140)
       .attr("y2", 0)
       .attr("stroke", "black")
       .attr("stroke-width", 1)
@@ -96,7 +96,7 @@
 
       //add final milestone circle
       milestoneNGroup = svg.append("g")
-        .attr("transform", function(d, i) { return "translate(" + (10 + milestoneIntervalArr.length * 150) + ", " + yAxis + ")"; });
+        .attr("transform", function(d, i) { return "translate(" + (10 + milestoneIntervalArr.length * 140) + ", " + yAxis + ")"; });
       milestoneNGroup.append("circle")
         .attr("cx", 30)
         .attr("cy", 0)
