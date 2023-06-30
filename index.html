@@ -153,9 +153,9 @@
           var firstLine = hgroup.append("line")
           .attr("class", "highlighted-line")
           .attr("x1", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().left))
-          .attr("y1", yAxis+45)
+          .attr("y1", yAxis+25)
           .attr("x2", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().left))
-          .attr("y2", yAxis+45)
+          .attr("y2", yAxis+25)
           .attr("stroke", "black")
           .attr("stroke-width", 1);
           hgroup.append("line")
@@ -163,7 +163,7 @@
           .attr("x1", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().x))
           .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
           .attr("x2", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().x))
-          .attr("y2", yAxis+45)
+          .attr("y2", yAxis+25)
           .attr("stroke", "black")
           .attr("stroke-width", 1);
           hgroup.append("line")
@@ -171,14 +171,14 @@
           .attr("x1", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().x))
           .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
           .attr("x2", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().x))
-          .attr("y2", yAxis+45)
+          .attr("y2", yAxis+25)
           .attr("stroke", "black")
           .attr("stroke-width", 1);
           hgroup.append("text")
           .text(specifiedIntervalMedian)
           .attr("width", 100)
           .attr("x", (+firstLine.attr("x2") + +firstLine.attr("x1"))/2)  // Set the x-coordinate
-          .attr("y", yAxis + 70)
+          .attr("y", yAxis + 45)
           .attr("text-anchor", "middle");
 
         }
