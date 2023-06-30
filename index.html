@@ -6,6 +6,14 @@
         stroke: grey;
         stroke-width: 2;
       }
+      /*svg {
+      	display: block;
+      	margin: auto;
+      }
+      h4 {
+      	display: block;
+      	margin: auto;
+      }*/
     </style>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./toolbox.js"></script>
@@ -27,8 +35,9 @@
     </script>
 
 <body>
-    <h4>D3 Visualization | Milestones</h4>
-    <svg width="1298" height="250"></svg>
+	<h4>D3 Visualization | Milestones</h4>
+    <svg width="870" height="250"> 
+	</svg>
     <script>
       var yAxis = 100;
       var xStart = 70;
@@ -46,12 +55,19 @@
       .attr("points", "0 0, 10 5, 0 10")
       .attr("fill", "black");
 
+   //    svg.append("text")
+   //    .text("D3 Visualization | Milestones")
+	  // .attr("x", 0)
+	  // .attr("y", 20)
+	  // .style("font-size", 18)
+	  // .style("font-weight", "bold");
+
       //create milestone groups
       var group = svg.selectAll("g")
         .data(milestoneIntervalArr)
         .enter()
         .append("g")
-        .attr("transform", function(d, i) { return "translate(" + (10 + i * 140) + ", " + yAxis + ")"; });
+        .attr("transform", function(d, i) { return "translate(" + (10 + i * 130) + ", " + yAxis + ")"; });
 
       group.append("circle")
       .attr("cx", 30)
@@ -64,7 +80,7 @@
       group.append("line")
       .attr("x1", 50)
       .attr("y1", 0)
-      .attr("x2", 70)
+      .attr("x2", d => d<10 ? 83: d<100 ? 80 : 75)
       .attr("y2", 0)
       .attr("stroke", "black")
       .attr("stroke-width", 1);
@@ -79,7 +95,7 @@
 
 
       group.append("line")
-      .attr("x1", 110)
+      .attr("x1", d => d<10 ? 97 : d<100 ? 100 : 105)
       .attr("y1", 0)
       .attr("x2", 140)
       .attr("y2", 0)
@@ -96,7 +112,7 @@
 
       //add final milestone circle
       milestoneNGroup = svg.append("g")
-        .attr("transform", function(d, i) { return "translate(" + (10 + milestoneIntervalArr.length * 140) + ", " + yAxis + ")"; });
+        .attr("transform", function(d, i) { return "translate(" + (10 + milestoneIntervalArr.length * 130) + ", " + yAxis + ")"; });
       milestoneNGroup.append("circle")
         .attr("cx", 30)
         .attr("cy", 0)
@@ -116,8 +132,6 @@
     function handleClick() {
       var isActive = d3.select(this).classed("highlighted");
       var customMedianIsActive = d3.selectAll("g.highlighted-line-group").nodes().length >=1 ? true : false;
-      console.log(customMedianIsActive, "customMedianIsActive");
-      console.log(isActive);
       if(customMedianIsActive) d3.selectAll("g.highlighted-line-group").remove();
       if(isActive){
         d3.select(this).classed("highlighted", false);
@@ -134,16 +148,14 @@
           var specifiedIntervalMedian = createIntervalMedian(specifiedIntervalArr);
           var selectedCircles = d3.selectAll("circle.highlighted").nodes();
           var selectedGroups = d3.selectAll("g.highlighted").nodes();
-          console.log(selectedGroups[0] , " bounding client");
-          console.log(selectedGroups[0].getBoundingClientRect().left , " bounding client");
           var hgroup = svg.append("g")
           .attr("class", "highlighted-line-group");
           var firstLine = hgroup.append("line")
           .attr("class", "highlighted-line")
           .attr("x1", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().left))
-          .attr("y1", yAxis+75)
+          .attr("y1", yAxis+45)
           .attr("x2", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().left))
-          .attr("y2", yAxis+75)
+          .attr("y2", yAxis+45)
           .attr("stroke", "black")
           .attr("stroke-width", 1);
           hgroup.append("line")
@@ -151,7 +163,7 @@
           .attr("x1", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().x))
           .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
           .attr("x2", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().x))
-          .attr("y2", yAxis+75)
+          .attr("y2", yAxis+45)
           .attr("stroke", "black")
           .attr("stroke-width", 1);
           hgroup.append("line")
@@ -159,14 +171,14 @@
           .attr("x1", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().x))
           .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
           .attr("x2", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().x))
-          .attr("y2", yAxis+75)
+          .attr("y2", yAxis+45)
           .attr("stroke", "black")
           .attr("stroke-width", 1);
           hgroup.append("text")
           .text(specifiedIntervalMedian)
           .attr("width", 100)
           .attr("x", (+firstLine.attr("x2") + +firstLine.attr("x1"))/2)  // Set the x-coordinate
-          .attr("y", yAxis + 100)
+          .attr("y", yAxis + 70)
           .attr("text-anchor", "middle");
 
         }
@@ -177,8 +189,6 @@
         d3.select(this.parentNode).classed("highlighted", true);
         activeCounter = 1;
       }
-      console.log(activeCounter);
-
     }
     </script>
     <script>
