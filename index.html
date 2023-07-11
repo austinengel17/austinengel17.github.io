@@ -15,11 +15,44 @@
       	margin: auto;
       }*/
     </style>
+    <style>
+  /* Table Styles */
+  table {
+    border-collapse: collapse;
+    width: 850px;
+    margin-left: 10px;
+  }
+
+  th, td {
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+</style>
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./toolbox.js"></script>
     <script src="./data.json"></script>
     <script> 
       var milestoneArr;
+      var origData = [];
+      console.log(data);
+      console.log("orig data .. ", origData);
+      data.forEach(function(dataNode, index, arr) {
+        origData.push(JSON.parse(JSON.stringify(dataNode)));
+      });
       data.forEach(function(dataNode, index, arr) {
         for(i = 1; i < 8; i++)
           if(dataNode["Milestone " + i])
@@ -32,16 +65,17 @@
           return createIntervalMedian(intervalArr);
       });
       console.log(milestoneIntervalArr);
+    
     </script>
 
 <body>
 	<h4>D3 Visualization | Milestones</h4>
-    <svg width="870" height="250"> 
-	</svg>
+    <svg width="870" height="250" id="diagram"></svg>
+    <!-- /////////////////////////////////////// diagram code -->
     <script>
-      var yAxis = 100;
+      var yAxis = 120;
       var xStart = 70;
-      const svg = d3.select("svg");
+      const svg = d3.select("#diagram");
       //create arrow marker
       svg.append("defs")
       .append("marker")
@@ -54,13 +88,6 @@
       .append("polygon")
       .attr("points", "0 0, 10 5, 0 10")
       .attr("fill", "black");
-
-   //    svg.append("text")
-   //    .text("D3 Visualization | Milestones")
-	  // .attr("x", 0)
-	  // .attr("y", 20)
-	  // .style("font-size", 18)
-	  // .style("font-weight", "bold");
 
       //create milestone groups
       var group = svg.selectAll("g")
@@ -190,6 +217,39 @@
         activeCounter = 1;
       }
     }
+    /////////////////////////////////table code
+      const tableContainer = d3.select("body");
+
+// Create table element
+const table = tableContainer.append("table");
+
+// Create table header
+const headerRow = table.append("tr");
+const headers = Object.keys(origData[0]);
+headers.forEach(function(header) {
+  headerRow.append("th")
+    .text(header);
+});
+
+// Create table rows
+const rows = table.selectAll("tr.row")
+  .data(origData)
+  .enter()
+  .append("tr")
+  .attr("class", "row");
+
+// Create table cells
+const cells = rows.selectAll("td.cell")
+  .data(function(row) {
+    return headers.map(function(header) {
+      return { column: header, value: row[header] == null || row[header]=="" ? "Null" : row[header]};
+    });
+  })
+  .enter()
+  .append("td")
+  .attr("class", "cell")
+  .text(function(d) { return d.value; });
+
     </script>
     <script>
     
