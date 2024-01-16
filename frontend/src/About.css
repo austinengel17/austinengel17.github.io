@@ -1,0 +1,43 @@
+/* About.css */
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-section {
+  margin-bottom: 30px;
+}
+
+.skills-section,
+.experience-section,
+.education-section,
+.interests-section {
+  margin-bottom: 30px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+.experience-item,
+.education-item {
+  margin-bottom: 20px;
+}
+
+/* Responsive Design - Adjust as needed */
+@media (max-width: 600px) {
+  .about-container {
+    padding: 10px;
+  }
+}
