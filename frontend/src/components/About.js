@@ -7,13 +7,13 @@ function About() {
           <section className="about-section">
             <h1>About Me</h1>
             <p>
-              Hi, I'm Austin, a passionate and creative software developer based in Boston Massachusetts.
-              I specialize in building web applications and have a strong foundation in Java Spring, both SQL and NoSQL, JavaScript, and much more.
+              Hi, I'm Austin, a dedicated and creative software developer based in Boston Massachusetts.
+              I specialize in building web applications and have a strong foundation in Java, JavaScript, both SQL and NoSQL, RESTful APIs and much more.
             </p>
             <p>
-              With two years of experience, I have worked on a variety of projects, ranging from
-              constructing web pages and components, integrating google AI data modeling with analytics data, and automating integrity inspection during content modification. My goal is to create efficient and user-friendly
-              solutions that make a positive impact.
+              With two and a half years of experience, I have worked on a variety of projects, ranging from constructing web pages and components,
+              integrating google AI data modeling with analytics data, and automating text and hyperlink integrity inspection for content modification script runs.
+              My goal is to create efficient and user-friendly solutions that make a positive impact.
             </p>
           </section>
 
@@ -29,19 +29,33 @@ function About() {
               <li>HTML5, CSS3</li>
             </ul>
           </section>
-
+            <section class="tools-section">
+                <h2>Tools I use day-to-day include:</h2>
+                <ul>
+                    <li>Cloudflare</li>
+                    <li>DataDog</li>
+                    <li>GTM</li>
+                    <li>Bitbucket</li>
+                    <li>Jira</li>
+                </ul>
+            </section>
           <section className="experience-section">
             <h2>Experience</h2>
             <div className="experience-item">
                 <h3>TechTarget - Software Engineer</h3>
                 <p>
-                    08/2021 - present: [Description of your role, responsibilities, and achievements]
+                    08/2021 - present
+                </p>
+                <p>
+                    In this role I act as a primary developer for TechTarget's "Vignette" websites. This includes constructing and maintaining webpages and sites,
+                    building supporting apps, scripts and projects, and monitoring and investigating errors and performance issues. In this role I also stay in close contact with the SEO team to provide technical guidance and support.
+                    I am often digging into all aspects of our web applications, from server-side to database and client-side, giving me a full perspective of our products.
                 </p>
             </div>
             <div className="experience-item">
                 <h3>Mayflower Interactive - Software Engineer (Part-Time)</h3>
                 <p>
-                    02/2021 - 06/2021: [Description of your role, responsibilities, and achievements]
+                    02/2021 - 06/2021
                 </p>
             </div>
           </section>
