@@ -18,27 +18,30 @@ function About() {
           </section>
 
           <section className="skills-section">
-            <h2>Skills</h2>
-            <ul>
-              <li>Java</li>
-              <li>JavaScript (ES6+)</li>
-              <li>Postgres</li>
-              <li>Solr</li>
-              <li>React.js</li>
-              <li>Node.js</li>
-              <li>HTML5, CSS3</li>
-            </ul>
-          </section>
-            <section class="tools-section">
-                <h2>Tools I use day-to-day include:</h2>
+            <div class="skills-column">
+                <h2>Skills</h2>
+                <ul>
+                  <li>Java</li>
+                  <li>JavaScript (ES6+)</li>
+                  <li>Postgres</li>
+                  <li>Solr</li>
+                  <li>React.js</li>
+                  <li>Node.js</li>
+                  <li>HTML5, CSS3</li>
+                </ul>
+            </div>
+            <div class="tools-column">
+                <h2>Tools</h2>
                 <ul>
                     <li>Cloudflare</li>
                     <li>DataDog</li>
+                    <li>DBmarlin</li>
                     <li>GTM</li>
                     <li>Bitbucket</li>
                     <li>Jira</li>
                 </ul>
-            </section>
+            </div>
+          </section>
           <section className="experience-section">
             <h2>Experience</h2>
             <div className="experience-item">
@@ -76,8 +79,8 @@ function About() {
           <section className="interests-section">
             <h2>Interests</h2>
             <p>
-              Apart from coding, I enjoy [Your Hobbies or Interests]. Whether it's exploring new technologies,
-              reading tech blogs, or contributing to open-source projects, I'm always eager to learn and grow in
+              Apart from coding, I enjoy a wide variety of outdoor activities, traveling and playing music. Whether it's exploring new technologies,
+              or reading tech blogs I'm always eager to learn and grow in
               the ever-evolving field of software development.
             </p>
           </section>

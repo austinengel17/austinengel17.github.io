@@ -13,8 +13,22 @@
 .skills-section,
 .experience-section,
 .education-section,
-.interests-section {
+.interests-section,
+.about-section {
   margin-bottom: 30px;
+  border-bottom: 2px solid grey;
+}
+
+.skills-column ul,
+.tools-column ul {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+.skills-column li,
+.tools-column li {
+    margin: 2%;
 }
 
 h1, h2, h3 {
