@@ -6,7 +6,7 @@ import Home from './components/Home.js';
 import Navbar from './components/Navbar.js';
 import About from './components/About.js';
 
-import {BrowserRouter as Router, Routes, Route,} from "react-router-dom";
+import {HashRouter as Router, Routes, Route,} from "react-router-dom";
 
 function App() {
 return (
@@ -15,8 +15,9 @@ return (
             <Navbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/map" element={<div id="body"><Header /><Map /></div>} />
+              <Route path="#/about" element={<About />} />
+              <Route path="#/contact" element={<Contact />} />
+              <Route path="#/map" element={<div id="body"><Header /><Map /></div>} />
             </Routes>
           </>
     </Router>
