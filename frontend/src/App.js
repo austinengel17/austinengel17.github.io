@@ -5,6 +5,8 @@ import Map from'./components/Map.js';
 import Home from './components/Home.js';
 import Navbar from './components/Navbar.js';
 import About from './components/About.js';
+import Contact from './components/About.js';
+
 
 import {HashRouter as Router, Routes, Route,} from "react-router-dom";
 
