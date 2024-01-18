@@ -8,11 +8,11 @@ function About() {
             <h1>About Me</h1>
             <p>
               Hi, I'm Austin, a dedicated and creative software developer based in Boston Massachusetts.
-              I specialize in building web applications and have a strong foundation in Java, JavaScript, both SQL and NoSQL, RESTful APIs and much more.
+              I specialize in building web applications and have a strong foundation in Java, JavaScript, RESTful APIs, both SQL and NoSQL and much more.
             </p>
             <p>
               With two and a half years of experience, I have worked on a variety of projects, ranging from constructing web pages and components,
-              integrating google AI data modeling with analytics data, and automating text and hyperlink integrity inspection for content modification script runs.
+              integrating google AI data modeling with website analytics, and automating text and hyperlink integrity inspection for content modification script runs.
               My goal is to create efficient and user-friendly solutions that make a positive impact.
             </p>
           </section>
@@ -79,7 +79,7 @@ function About() {
           <section className="interests-section">
             <h2>Interests</h2>
             <p>
-              Apart from coding, I enjoy a wide variety of outdoor activities, traveling and playing music. Whether it's exploring new technologies,
+              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, and playing music. Whether it's exploring new technologies,
               or reading tech blogs I'm always eager to learn and grow in
               the ever-evolving field of software development.
             </p>
