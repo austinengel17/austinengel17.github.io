@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './Header.js';
-import Map from'./components/Map.js';
+import Map from'./mbta-tracker/Map.js';
 import Home from './components/Home.js';
 import Navbar from './components/Navbar.js';
 import About from './components/About.js';

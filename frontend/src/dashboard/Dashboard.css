@@ -14,7 +14,11 @@
  .dashboard-heading{
     margin: 1%;
  }
-
+#dashboard-table{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
  #diagram {
     display: flex;
  }
@@ -79,6 +83,9 @@ tr:nth-child(even) {
     .dashboard-heading{
          font-size:25px
     }
+    table{
+        width: 95%;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) { /* Styles for large devices */
@@ -88,6 +95,9 @@ tr:nth-child(even) {
     svg{
         padding-left: 5%;
         padding-right: 5%;
+    }
+    table{
+            width: 90%;
     }
 }
 
@@ -99,15 +109,7 @@ tr:nth-child(even) {
         padding-left: 10%;
         padding-right: 10%;
     }
-}
-
-@media (min-width: 768px){
     table{
-        width: 95%;
-    }
-    #dashboard-table{
-        justify-content: center;
-        display: flex;
-        width: 100%;
+            width: 85%;
     }
 }
