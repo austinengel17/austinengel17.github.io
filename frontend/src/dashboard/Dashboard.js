@@ -19,7 +19,7 @@ function Dashboard(){
                     <svg className="dashboard-svg" id="diagram" ref={svgRef}>
                         `<Draw dataset={dataset} svgRef={svgRef}/>
                     </svg>
-                    <body ref={bodyRef}></body>
+                    <div id='dashboard-table'></div>
                 </div>
             )
             :

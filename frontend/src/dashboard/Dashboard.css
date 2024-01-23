@@ -81,6 +81,33 @@ tr:nth-child(even) {
     }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) { /* Styles for large devices */ }
+@media (min-width: 992px) and (max-width: 1199.98px) { /* Styles for large devices */
+    .dashboard-heading{
+         font-size:25px
+    }
+    svg{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
 
-@media (min-width: 1200px) { /* Styles for extra large devices */ }
+@media (min-width: 1200px) { /* Styles for extra large devices */
+    .dashboard-heading{
+         font-size:25px
+    }
+     svg{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media (min-width: 768px){
+    table{
+        width: 95%;
+    }
+    #dashboard-table{
+        justify-content: center;
+        display: flex;
+        width: 100%;
+    }
+}
