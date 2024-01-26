@@ -3,25 +3,30 @@ import * as d3 from "d3";
 
   
   function Draw({ svgRef, stationData, selectedLine}) {
-  var lineYAxis = 150;
+  var lineYAxis = 200;
   var circleRadius = 2;
   console.log("st data .. ", stationData);
   useEffect(()=>{
 
-    var svg = d3.select(svgRef.current);
+    var svg = d3.select(svgRef.current)
+    .attr("viewBox", `0 0 ${30 + stationData.length * 60} 400`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+    //create stations//
     var stopGroup = svg.selectAll("g")
     .data(stationData)
     .enter()
     .append("g")
     .attr("transform", function(d, i) {
       return "translate(" + (30 + i * 60) + ", " + (lineYAxis) + ")";
-    });
+    })
+    .attr("id", d=>Object.keys(d)[0]);
+
     stopGroup.append("circle")
     .attr("cx", 0)
     .attr("cy", 0)
     .attr("r", circleRadius)
     .attr("fill", "green")
-    .attr("id", d=>Object.keys(d)[0])
     .attr("class", "station");
 
     stopGroup.append("text")
@@ -38,14 +43,13 @@ import * as d3 from "d3";
     for(var i = 0; i < stops.length-1; i++){
     var node1 = stops[i];
     var node2 = stops[i+1];
-    var circlePosition1 = stops[i].getBoundingClientRect();
-    var circlePosition2 = stops[i+1].getBoundingClientRect();
 
+    console.log("test: " + '');
     svg.append("line")
-    .attr("x1", +circlePosition1.left + window.pageXOffset + circleRadius*2)
-    .attr("y1", 150)
-    .attr("x2", +circlePosition2.left + window.pageXOffset)
-    .attr("y2", 150)
+    .attr("x1", 30 + i * 60)
+    .attr("y1", lineYAxis)
+    .attr("x2", 30 + (i + 1) * 60)
+    .attr("y2", lineYAxis)
     .attr("stroke", "green")
     .attr("stroke-width", 1);
 

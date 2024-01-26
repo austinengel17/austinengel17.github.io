@@ -179,36 +179,43 @@ useEffect(() => {
                     var specifiedIntervalMedian = Toolbox.createIntervalMedian(specifiedIntervalArr);
                     var selectedCircles = d3.selectAll("circle.highlighted").nodes();
                     var selectedGroups = d3.selectAll("g.highlighted").nodes();
+                    console.log("selected groups are: " + selectedGroups[0].getAttribute("transform"));
+                    var group1Transform = selectedGroups[0].getAttribute("transform");
+                    var group2Transform = selectedGroups[1].getAttribute("transform");
+                    var group1Convert = group1Transform.split(/[\(,]+/);
+                    var group2Convert = group2Transform.split(/[\(,]+/);
+                    var group1X = parseInt(group1Convert[1], 10);
+                    var group2X = parseInt(group2Convert[1], 10);
                     var hgroup = svg.append("g")
                     .attr("class", "highlighted-line-group");
                     var firstLine = hgroup.append("line")
                     .attr("class", "highlighted-line")
-                    .attr("x1", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().left))
+                    .attr("x1", group1X + (+selectedCircles[0].getAttribute("cx")))
+                    .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
+                    .attr("x2", group1X + (+selectedCircles[0].getAttribute("cx")))
+                    .attr("y2", yAxis+25)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 1);
+                    var longLine = hgroup.append("line")
+                    .attr("class", "highlighted-line")
+                    .attr("x1", group1X + (+selectedCircles[0].getAttribute("cx")))
                     .attr("y1", yAxis+25)
-                    .attr("x2", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().left))
+                    .attr("x2", group2X + (+selectedCircles[1].getAttribute("cx")))
                     .attr("y2", yAxis+25)
                     .attr("stroke", "black")
                     .attr("stroke-width", 1);
                     hgroup.append("line")
                     .attr("class", "highlighted-line")
-                    .attr("x1", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().x))
+                    .attr("x1", group2X + (+selectedCircles[1].getAttribute("cx")))
                     .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
-                    .attr("x2", +selectedCircles[0].getAttribute("cx") + (+selectedGroups[0].getBoundingClientRect().x))
-                    .attr("y2", yAxis+25)
-                    .attr("stroke", "black")
-                    .attr("stroke-width", 1);
-                    hgroup.append("line")
-                    .attr("class", "highlighted-line")
-                    .attr("x1", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().x))
-                    .attr("y1", yAxis + (+selectedCircles[0].getAttribute("r")))
-                    .attr("x2", +selectedCircles[1].getAttribute("cx") + (+selectedGroups[1].getBoundingClientRect().x))
+                    .attr("x2", group2X + (+selectedCircles[1].getAttribute("cx")))
                     .attr("y2", yAxis+25)
                     .attr("stroke", "black")
                     .attr("stroke-width", 1);
                     hgroup.append("text")
                     .text(specifiedIntervalMedian)
                     .attr("width", 100)
-                    .attr("x", (+firstLine.attr("x2") + +firstLine.attr("x1"))/2)  // Set the x-coordinate
+                    .attr("x", (+longLine.attr("x2") + +longLine.attr("x1"))/2)  // Set the x-coordinate
                     .attr("y", yAxis + 45)
                     .attr("text-anchor", "middle");
 

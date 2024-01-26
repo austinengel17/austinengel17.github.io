@@ -2,7 +2,7 @@
         stroke: grey;
         stroke-width: 2;
       }
-      svg {
+      .dashboard-svg {
       	display: block;
       	margin : 2%;
       }
@@ -92,7 +92,7 @@ tr:nth-child(even) {
     .dashboard-heading{
          font-size:25px
     }
-    svg{
+    .dashboard-svg{
         padding-left: 5%;
         padding-right: 5%;
     }
@@ -105,7 +105,7 @@ tr:nth-child(even) {
     .dashboard-heading{
          font-size:25px
     }
-     svg{
+     .dashboard-svg{
         padding-left: 10%;
         padding-right: 10%;
     }

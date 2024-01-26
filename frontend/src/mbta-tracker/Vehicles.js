@@ -26,27 +26,30 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) {
           .attr("transform", function(d, i){
             var stopId = d.stopId;
               var stopName = stationMapping[stopId];
-              console.log('pre bounding rec client ', stopName);
-              console.log('pre bounding rec client ', stopId);
+              console.log('stop id: ', stopName);
+              console.log('stop id: ', stopId);
               var station = svgElement.selectAll("#" + stopName)
-              var circlePosition = station.node().getBoundingClientRect()
-              var x = +circlePosition.left + window.pageXOffset;
-              var directionId = d.directionId;
-              if(d.currentStatus == inTransitTo){
-                if(directionId == 0)
-                  x=x+30;
-                else
-                  x=x-30;
-              }
-              if(d.currentStatus == incomingAt){
-                if(directionId == 0)
-                  x=x+15;
-                else
-                  x=x-15;
-              }
+              if(station.node() != null){
+                  var transformString = station.attr("transform");
+                  var convert = transformString.split(/[\(,]+/);
+                  var x = parseInt(convert[1], 10);
+                  var directionId = d.directionId;
+                  if(d.currentStatus == inTransitTo){
+                    if(directionId == 0)
+                      x=x+30;
+                    else
+                      x=x-30;
+                  }
+                  if(d.currentStatus == incomingAt){
+                    if(directionId == 0)
+                      x=x+15;
+                    else
+                      x=x-15;
+                  }
 
-            var vehicleY = d.directionId == 0 ? 155 : 125;
-            return "translate(" + x + " , " + vehicleY +")";
+              var vehicleY = d.directionId == 0 ? 205 : 175;
+              return "translate(" + x + " , " + vehicleY +")";
+              }
           });
 
            vGroup.append("polygon") 
@@ -84,43 +87,46 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) {
         .attr("transform", function(d, i){
             var stopId = d.stopId;
               var stopName = stationMapping[stopId];
-              var station = svgElement.selectAll("#" + stopName)
-              console.log('pre bounding rec client ', stopName);
-              console.log('pre bounding rec client ', stopId);
-              var circlePosition = station.node().getBoundingClientRect()
-              var x = +circlePosition.left + window.pageXOffset;
-              var directionId = d.directionId;
-              if(d.currentStatus == inTransitTo){
-                if(directionId == 0)
-                  x=x+30;
-                else
-                  x=x-30;
-              }
-              if(d.currentStatus == incomingAt){
-                if(directionId == 0)
-                  x=x+15;
-                else
-                  x=x-15;
-              }
-            var vehicleY = d.directionId == 0 ? 155 : 125;
-            return "translate(" + x + " , " + vehicleY +")";
-          });
-        update.select("polygon")
-          .attr("points", function(d){
-              if(d.directionId == 1)
-                return "3,0 -3,0 -3,7 3,7 7,3"; //outbound
-              else
-                return "-3,5 3,5 3,12 -3,12 -7,8"; //inbound
+              var station = svgElement.select("#" + stopName)
+              console.log('stop name: ', stopName);
+              console.log('stop id:  ', stopId);
+              if(station.node() != null){
+                  var transformString = station.attr("transform");
+                  var convert = transformString.split(/[\(,]+/);
+                  var x = parseInt(convert[1], 10);
+                  var directionId = d.directionId;
+                  if(d.currentStatus == inTransitTo){
+                    if(directionId == 0)
+                      x=x+30;
+                    else
+                      x=x-30;
+                  }
+                  if(d.currentStatus == incomingAt){
+                    if(directionId == 0)
+                      x=x+15;
+                    else
+                      x=x-15;
+                  }
+                    var vehicleY = d.directionId == 0 ?  205 : 175;
+                    return "translate(" + x + " , " + vehicleY +")";
+                }
+            });
+            update.select("polygon")
+              .attr("points", function(d){
+                  if(d.directionId == 1)
+                    return "3,0 -3,0 -3,7 3,7 7,3"; //outbound
+                  else
+                    return "-3,5 3,5 3,12 -3,12 -7,8"; //inbound
+                })
+            update.select("text").text(function(d){
+              var stopId = d.stopId;
+              var stopName = stationMapping[stopId];
+              return d.id + " - " + d.currentStatus + ' - ' + stationMapping[stopId] + ' - direction: ' + d.directionId;
             })
-        update.select("text").text(function(d){
-          var stopId = d.stopId;
-          var stopName = stationMapping[stopId];
-          return d.id + " - " + d.currentStatus + ' - ' + stationMapping[stopId] + ' - direction: ' + d.directionId;
-        })
-        .attr("transform", function(d){
-          var rotation = d.directionId == 0 ? 45 : -45;
-          return "rotate(" + rotation + ")";
-        });
+            .attr("transform", function(d){
+              var rotation = d.directionId == 0 ? 45 : -45;
+              return "rotate(" + rotation + ")";
+            });
       },
       (exit) => {
         exit.remove(); 

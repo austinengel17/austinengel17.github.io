@@ -89,7 +89,7 @@ useEffect(()=>{
     {dataReady && options != null ? (
       <>
       <h2>{selectedLine}</h2>
-      <svg height="500" width="2000" ref={svgRef} >
+      <svg ref={svgRef} >
         <Draw stationData={stationData} svgRef={svgRef} selectedLine={selectedLine}/>
         <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine}/>
       </svg>
