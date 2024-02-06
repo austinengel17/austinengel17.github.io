@@ -8,12 +8,13 @@ function About() {
             <h1>About Me</h1>
             <p>
               Hi, I'm Austin, a dedicated and creative software developer based in Boston Massachusetts.
-              I specialize in building web applications and have a strong foundation in Java, JavaScript, RESTful APIs, both SQL and NoSQL and much more.
+              I specialize in building web applications and have a strong foundation in Java, JavaScript, RESTful APIs, both SQL and NoSQL, and much more.
             </p>
             <p>
-              With two and a half years of experience, I have worked on a variety of projects, ranging from constructing web pages and components,
-              integrating google AI data modeling with website analytics, and automating text and hyperlink integrity inspection for content modification script runs.
-              My goal is to create efficient and user-friendly solutions that make a positive impact.
+              With two and a half years of experience, I have worked on a variety of projects, ranging from website construction,
+              integrating google AI data modeling with analytics, and automating text and hyperlink integrity inspection for content modification script runs.
+              My goal is to create efficient and user-friendly solutions that make a positive impact. I'm always eager to learn and grow in the ever-evolving
+              field of software development.
             </p>
           </section>
 
@@ -52,7 +53,7 @@ function About() {
                 <p>
                     In this role I act as a primary developer for TechTarget's "Vignette" websites. This includes constructing and maintaining webpages and sites,
                     building supporting apps, scripts and projects, and monitoring and investigating errors and performance issues. In this role I also stay in close contact with the SEO team to provide technical guidance and support.
-                    I am often digging into all aspects of our web applications, from server-side to database and client-side, giving me a full perspective of our products.
+                    I am often digging into all aspects of our web applications, from server-side to client-side to database management, giving me a full perspective of our products.
                 </p>
             </div>
             <div className="experience-item">
@@ -79,9 +80,7 @@ function About() {
           <section className="interests-section">
             <h2>Interests</h2>
             <p>
-              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, and playing music. Whether it's exploring new technologies,
-              or reading tech blogs I'm always eager to learn and grow in
-              the ever-evolving field of software development.
+              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, and playing music.
             </p>
           </section>
         </div>
