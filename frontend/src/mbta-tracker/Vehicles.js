@@ -133,7 +133,6 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) {
     } 
       );
     }, [vehicleList]);
-
     //Load vehicles below
     useEffect(() => {
       const evtSource = new EventSource("http://" + backendHost + controllerEndpoint + vehiclePositionSub);
@@ -155,8 +154,13 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) {
           console.log("update", newData);
           return newData;
         });
+        } else if(eventData.event == "remove"){
+            setVehicleList((prevList) => {
+                return prevList.filter((item) => item.id !== vehicleData[0].id);
+            });
+        } else if(eventData.event == "add"){
+            setVehicleList((prevList) => {return [...prevList, vehicleData[0]]});
         }
-
       };
       evtSource.onerror = function (error) {
         console.error('EventSource error:', error);

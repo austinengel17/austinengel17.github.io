@@ -1,0 +1,62 @@
+[
+  {
+    "milestone_a": "1",
+    "milestone_b": "2",
+    "amber": 5,
+    "red": 10
+  },
+  {
+    "milestone_a": "2",
+    "milestone_b": "3",
+    "amber": 15,
+    "red": 30
+  },
+  {
+    "milestone_a": "3",
+    "milestone_b": "4",
+    "amber": 30,
+    "red": 60
+  },
+  {
+    "milestone_a": "4",
+    "milestone_b": "5",
+    "amber": 5,
+    "red": 10
+  },
+  {
+    "milestone_a": "5",
+    "milestone_b": "6",
+    "amber": 15,
+    "red": 30
+  },
+  {
+    "milestone_a": "6",
+    "milestone_b": "7",
+    "amber": 30,
+    "red": 60
+  },
+  {
+    "milestone_a": "7",
+    "milestone_b": "8",
+    "amber": 30,
+    "red": 60
+  },
+  {
+    "milestone_a": "8",
+    "milestone_b": "9",
+    "amber": 60,
+    "red": 120
+  },
+  {
+    "milestone_a": "1",
+    "milestone_b": "7",
+    "amber": 60,
+    "red": 120
+  },
+  {
+    "milestone_a": "7",
+    "milestone_b": "9",
+    "amber": 60,
+    "red": 120
+  }
+]

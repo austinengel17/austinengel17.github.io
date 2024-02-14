@@ -3,144 +3,492 @@
     "Id": 100,
     "Study Type": "A",
     "TA": "TA-X",
-    "Milestone 1": "22-Jan-20",
-    "Milestone 2": "24-Jan-20",
-    "Milestone 3": "26-Jan-20",
-    "Milestone 4": "1-Feb-20",
-    "Milestone 5": "3-Mar-20",
-    "Milestone 6": "25-Mar-20",
-    "Milestone 7": "30-Aug-21"
+    "Milestone 1":{
+      "planned": "22-Jan-20",
+      "actual": "22-Jan-20"
+    },
+    "Milestone 2": {
+      "planned": "24-Jan-20",
+      "actual": "26-Jan-20"
+    },
+    "Milestone 3": {
+      "planned": "26-Jan-20",
+      "actual": "1-Feb-20"
+    },
+    "Milestone 4": {
+      "planned": "3-Mar-20",
+      "actual": "3-Mar-20"
+    },
+    "Milestone 5": {
+      "planned": "3-Mar-20",
+      "actual": "7-Mar-20"
+    },
+    "Milestone 6": {
+      "planned": "1-Apr-20",
+      "actual":"4-Apr-20"
+    },
+    "Milestone 7": {
+      "planned": "1-Sep-20",
+      "actual": "7-Sep-20"
+    },
+    "Milestone 8": {
+      "planned": "1-May-21",
+      "actual": "25-Jul-21"
+    },
+    "Milestone 9": {
+      "planned": "1-Oct-21",
+      "actual": "30-Mar-22"
+    }
   },
   {
     "Id": 110,
     "Study Type": "B",
     "TA": "TA-Z",
-    "Milestone 1": "16-Jun-21",
-    "Milestone 2": "20-Jun-21",
-    "Milestone 3": "21-Jun-21",
-    "Milestone 4": "27-Jun-21",
-    "Milestone 5": "15-Jul-21",
-    "Milestone 6": "10-Oct-21",
-    "Milestone 7": ""
+    "Milestone 1":{
+      "planned": "16-Jun-21",
+      "actual": "16-Jun-21"
+    },
+    "Milestone 2": {
+      "planned": "17-Jun-21",
+      "actual": "21-Jun-21"
+    },
+    "Milestone 3": {
+      "planned": "20-Jan-21",
+      "actual": "27-Jun-21"
+    },
+    "Milestone 4": {
+      "planned": "5-Jul-21",
+      "actual": "15-Jul-21"
+    },
+    "Milestone 5": {
+      "planned": "10-Jul-21",
+      "actual": "16-Jul-21"
+    },
+    "Milestone 6": {
+      "planned": "",
+      "actual":""
+    },
+    "Milestone 7": {
+      "planned": "10-Sep-21",
+      "actual": "10-Oct-21"
+    },
+    "Milestone 8": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 9": {
+      "planned": "",
+      "actual": ""
+    }
   },
   {
     "Id": 120,
     "Study Type": "C",
     "TA": "TA-Y",
-    "Milestone 1": "21-Oct-19",
-    "Milestone 2": "26-Oct-19",
-    "Milestone 3": "26-Oct-19",
-    "Milestone 4": "11-Nov-19",
-    "Milestone 5": "2-Mar-20",
-    "Milestone 6": "8-Aug-20",
-    "Milestone 7": "4-Apr-21"
+    "Milestone 1":{
+      "planned": "21-Oct-17",
+      "actual": "21-Oct-17"
+    },
+    "Milestone 2": {
+      "planned": "22-Oct-17",
+      "actual": "26-Oct-17"
+    },
+    "Milestone 3": {
+      "planned": "1-Nov-17",
+      "actual": "11-Nov-17"
+    },
+    "Milestone 4": {
+      "planned": "5-Mar-18",
+      "actual": "2-Mar-18"
+    },
+    "Milestone 5": {
+      "planned": "10-Mar-18",
+      "actual": "27-Mar-18"
+    },
+    "Milestone 6": {
+      "planned": "1-Apr-18",
+      "actual":"28-May-18"
+    },
+    "Milestone 7": {
+      "planned": "15-Jun-18",
+      "actual": "23-Sep-18"
+    },
+    "Milestone 8": {
+      "planned": "15-Aug-18",
+      "actual": "8-Jan-19"
+    },
+    "Milestone 9": {
+      "planned": "1-Jun-22",
+      "actual": "4-Oct-22"
+    }
   },
   {
     "Id": 130,
     "Study Type": "A",
     "TA": "TA-W",
-    "Milestone 1": "16-Dec-22",
-    "Milestone 2": "16-Dec-22",
-    "Milestone 3": "16-Dec-22",
-    "Milestone 4": "6-Feb-23",
-    "Milestone 5": "",
-    "Milestone 6": "",
-    "Milestone 7": ""
+    "Milestone 1":{
+      "planned": "16-Dec-22",
+      "actual": "16-Dec-22"
+    },
+    "Milestone 2": {
+      "planned": "16-Dec-22",
+      "actual": "16-Dec-22"
+    },
+    "Milestone 3": {
+      "planned": "15-Jan-23",
+      "actual": "6-Feb-23"
+    },
+    "Milestone 4": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 5": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 6": {
+      "planned": "",
+      "actual":""
+    },
+    "Milestone 7": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 8": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 9": {
+      "planned": "",
+      "actual": ""
+    }
   },
   {
     "Id": 140,
     "Study Type": "B",
     "TA": "TA-X",
-    "Milestone 1": "6-Dec-18",
-    "Milestone 2": "12-Dec-18",
-    "Milestone 3": "12-Dec-18",
-    "Milestone 4": "11-Jan-19",
-    "Milestone 5": "7-May-19",
-    "Milestone 6": "9-Sep-19",
-    "Milestone 7": ""
+    "Milestone 1":{
+      "planned": "6-Dec-18",
+      "actual": "6-Dec-18"
+    },
+    "Milestone 2": {
+      "planned": "7-Dec-18",
+      "actual": "12-Dec-18"
+    },
+    "Milestone 3": {
+      "planned": "1-Jan-19",
+      "actual": "11-Jan-19"
+    },
+    "Milestone 4": {
+      "planned": "10-Apr-19",
+      "actual": "7-May-19"
+    },
+    "Milestone 5": {
+      "planned": "15-Apr-19",
+      "actual": "9-May-19"
+    },
+    "Milestone 6": {
+      "planned": "1-Apr-19",
+      "actual":"24-May-19"
+    },
+    "Milestone 7": {
+      "planned": "1-Sep-19",
+      "actual": "24-Sep-19"
+    },
+    "Milestone 8": {
+      "planned": "1-Nov-19",
+      "actual": "9-Feb-20"
+    },
+    "Milestone 9": {
+      "planned": "",
+      "actual": ""
+    }
   },
   {
     "Id": 150,
     "Study Type": "C",
     "TA": "TA-Y",
-    "Milestone 1": "13-Jan-20",
-    "Milestone 2": "16-Jan-20",
-    "Milestone 3": "16-Jan-20",
-    "Milestone 4": "15-Mar-20",
-    "Milestone 5": "28-Feb-20",
-    "Milestone 6": "17-Apr-20",
-    "Milestone 7": ""
+    "Milestone 1":{
+      "planned": "13-Jan-20",
+      "actual": "13-Jan-20"
+    },
+    "Milestone 2": {
+      "planned": "16-Jan-20",
+      "actual": "16-Jan-20"
+    },
+    "Milestone 3": {
+      "planned": "31-Jan-20",
+      "actual": "28-Feb-20"
+    },
+    "Milestone 4": {
+      "planned": "15-Mar-20",
+      "actual": "15-Mar-20"
+    },
+    "Milestone 5": {
+      "planned": "5-Apr-20",
+      "actual": "15-Apr-20"
+    },
+    "Milestone 6": {
+      "planned": "1-Jun-20",
+      "actual":"13-Jul-20"
+    },
+    "Milestone 7": {
+      "planned": "1-Aug-20",
+      "actual": "30-Nov-20"
+    },
+    "Milestone 8": {
+      "planned": "1-Oct-20",
+      "actual": "17-Dec-20"
+    },
+    "Milestone 9": {
+      "planned": "",
+      "actual": ""
+    }
   },
   {
     "Id": 160,
     "Study Type": "A",
     "TA": "TA-W",
-    "Milestone 1": "7-Aug-21",
-    "Milestone 2": "9-Aug-21",
-    "Milestone 3": "10-Aug-21",
-    "Milestone 4": "5-Sep-21",
-    "Milestone 5": "29-Jan-22",
-    "Milestone 6": "19-Mar-22",
-    "Milestone 7": "19-Jun-23"
+    "Milestone 1":{
+      "planned": "7-Aug-21",
+      "actual": "7-Aug-21"
+    },
+    "Milestone 2": {
+      "planned": "9-Aug-21",
+      "actual": "10-Aug-21"
+    },
+    "Milestone 3": {
+      "planned": "11-Aug-21",
+      "actual": "5-Sep-21"
+    },
+    "Milestone 4": {
+      "planned": "12-Dec-21",
+      "actual": "29-Jan-22"
+    },
+    "Milestone 5": {
+      "planned": "1-Feb-22",
+      "actual": "17-Feb-22"
+    },
+    "Milestone 6": {
+      "planned": "15-Feb-22",
+      "actual":"1-Mar-22"
+    },
+    "Milestone 7": {
+      "planned": "15-May-22",
+      "actual": "1-Jul-22"
+    },
+    "Milestone 8": {
+      "planned": "1-Jul-22",
+      "actual": "19-Jul-22"
+    },
+    "Milestone 9": {
+      "planned": "1-Jul-23",
+      "actual": "19-Dec-23"
+    }
   },
   {
     "Id": 180,
     "Study Type": "B",
     "TA": "TA-Z",
-    "Milestone 1": "23-Nov-19",
-    "Milestone 2": "23-Nov-19",
-    "Milestone 3": "24-Nov-19",
-    "Milestone 4": "19-Jan-20",
-    "Milestone 5": "19-Jul-20",
-    "Milestone 6": "10-Aug-20",
-    "Milestone 7": ""
+    "Milestone 1":{
+      "planned": "23-Nov-19",
+      "actual": "23-Nov-19"
+    },
+    "Milestone 2": {
+      "planned": "25-Nov-19",
+      "actual": "24-Nov-19"
+    },
+    "Milestone 3": {
+      "planned": "5-Jan-20",
+      "actual": "19-Jan-20"
+    },
+    "Milestone 4": {
+      "planned": "1-May-20",
+      "actual": "19-Jul-20"
+    },
+    "Milestone 5": {
+      "planned": "5-May-20",
+      "actual": "30-Jul-20"
+    },
+    "Milestone 6": {
+      "planned": "1-Jul-20",
+      "actual":"1-Aug-20"
+    },
+    "Milestone 7": {
+      "planned": "1-Nov-20",
+      "actual": "7-Dec-20"
+    },
+    "Milestone 8": {
+      "planned": "1-Dec-20",
+      "actual": "10-Jan-21"
+    },
+    "Milestone 9": {
+      "planned": "",
+      "actual": ""
+    }
   },
   {
     "Id": 200,
     "Study Type": "C",
     "TA": "TA-W",
-    "Milestone 1": "4-Apr-22",
-    "Milestone 2": "10-Apr-22",
-    "Milestone 3": "10-Apr-22",
-    "Milestone 4": "23-May-22",
-    "Milestone 5": "25-May-22",
-    "Milestone 6": "26-May-22",
-    "Milestone 7": "30-Jul-22"
+    "Milestone 1":{
+      "planned": "4-Apr-22",
+      "actual": "4-Apr-22"
+    },
+    "Milestone 2": {
+      "planned": "4-Apr-22",
+      "actual": "10-Apr-22"
+    },
+    "Milestone 3": {
+      "planned": "20-May-22",
+      "actual": "23-May-22"
+    },
+    "Milestone 4": {
+      "planned": "23-May-22",
+      "actual": "25-May-22"
+    },
+    "Milestone 5": {
+      "planned": "25-May-22",
+      "actual": "26-May-22"
+    },
+    "Milestone 6": {
+      "planned": "1-Jun-22",
+      "actual":"27-Jun-22"
+    },
+    "Milestone 7": {
+      "planned": "1-Jul-22",
+      "actual": "17-Oct-22"
+    },
+    "Milestone 8": {
+      "planned": "1-Aug-22",
+      "actual": "26-Oct-22"
+    },
+    "Milestone 9": {
+      "planned": "1-Sep-22",
+      "actual": "30-Dec-22"
+    }
   },
   {
     "Id": 210,
     "Study Type": "A",
     "TA": "TA-X",
-    "Milestone 1": "27-May-23",
-    "Milestone 2": "6-Jun-23",
-    "Milestone 3": "7-Jun-23",
-    "Milestone 4": "",
-    "Milestone 5": "",
-    "Milestone 6": "",
-    "Milestone 7": ""
+    "Milestone 1":{
+      "planned": "27-May-23",
+      "actual": "27-May-23"
+    },
+    "Milestone 2": {
+      "planned": "29-May-23",
+      "actual": "7-Jun-23"
+    },
+    "Milestone 3": {
+      "planned": "1-Jul-23",
+      "actual": "3-Jul-23"
+    },
+    "Milestone 4": {
+      "planned": "10-Dec-23",
+      "actual": "13-Nov-23"
+    },
+    "Milestone 5": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 6": {
+      "planned": "",
+      "actual":""
+    },
+    "Milestone 7": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 8": {
+      "planned": "",
+      "actual": ""
+    },
+    "Milestone 9": {
+      "planned": "",
+      "actual": ""
+    }
   },
   {
     "Id": 220,
     "Study Type": "B",
     "TA": "TA-Y",
-    "Milestone 1": "1-Feb-20",
-    "Milestone 2": "4-Feb-20",
-    "Milestone 3": "5-Feb-20",
-    "Milestone 4": "3-Mar-20",
-    "Milestone 5": "2-Jul-20",
-    "Milestone 6": "3-Aug-20",
-    "Milestone 7": "27-May-23"
+    "Milestone 1":{
+      "planned": "1-Feb-20",
+      "actual": "1-Feb-20"
+    },
+    "Milestone 2": {
+      "planned": "3-Feb-20",
+      "actual": "5-Feb-20"
+    },
+    "Milestone 3": {
+      "planned": "2-Mar-20",
+      "actual": "3-Mar-20"
+    },
+    "Milestone 4": {
+      "planned": "1-Jun-20",
+      "actual": "2-Jul-20"
+    },
+    "Milestone 5": {
+      "planned": "3-Jun-20",
+      "actual": "4-Jul-20"
+    },
+    "Milestone 6": {
+      "planned": "1-Jun-20",
+      "actual":"31-Jul-20"
+    },
+    "Milestone 7": {
+      "planned": "1-Aug-20",
+      "actual": "29-Nov-20"
+    },
+    "Milestone 8": {
+      "planned": "1-Nov-20",
+      "actual": "3-Dec-20"
+    },
+    "Milestone 9": {
+      "planned": "1-Apr-23",
+      "actual": "27-Aug-23"
+    }
   },
   {
     "Id": 230,
     "Study Type": "C",
     "TA": "TA-Z",
-    "Milestone 1": "23-Jun-21",
-    "Milestone 2": "24-Jun-21",
-    "Milestone 3": "24-Jun-21",
-    "Milestone 4": "27-Jun-21",
-    "Milestone 5": "13-Jul-21",
-    "Milestone 6": "17-Jul-21",
-    "Milestone 7": "12-Oct-21"
+    "Milestone 1":{
+      "planned": "23-Jun-21",
+      "actual": "23-Jun-21"
+    },
+    "Milestone 2": {
+      "planned": "25-Jun-21",
+      "actual": "24-Jun-21"
+    },
+    "Milestone 3": {
+      "planned": "1-Jul-21",
+      "actual": "27-Jun-21"
+    },
+    "Milestone 4": {
+      "planned": "10-Jul-21",
+      "actual": "13-Jul-21"
+    },
+    "Milestone 5": {
+      "planned": "15-Jul-21",
+      "actual": "14-Jul-21"
+    },
+    "Milestone 6": {
+      "planned": "1-Jul-21",
+      "actual":"20-Aug-21"
+    },
+    "Milestone 7": {
+      "planned": "15-Aug-21",
+      "actual": "15-Dec-21"
+    },
+    "Milestone 8": {
+      "planned": "1-Oct-22",
+      "actual": "30-Oct-22"
+    },
+    "Milestone 9": {
+      "planned": "15-Dec-22",
+      "actual": "12-Mar-23"
+    }
   }
 ]
