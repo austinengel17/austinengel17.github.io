@@ -59,6 +59,7 @@ table {
 td {
     border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
     font-size: 9px;
     text-align: center;
     background-color: white;
@@ -69,6 +70,8 @@ th {
     color: #333;
     font-weight: bold;
     border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     font-size: 12px
 }
 
