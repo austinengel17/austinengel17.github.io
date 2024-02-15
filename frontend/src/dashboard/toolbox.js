@@ -40,7 +40,7 @@ function createIntervalArray(milestoneA, milestoneB, type, data){
 	console.log("data", data)
 	data.forEach(function(dataNode){
 	    console.log("dataNode : ");
-	    console.log(dataNode);
+	    console.log(dataNode , milestoneA, milestoneB);
 		if(dataNode[milestoneA][type] && dataNode[milestoneB][type])
 			intervalArr.push(getDifferenceDaysByDate(milestoneA, milestoneB, type, dataNode));
 	});

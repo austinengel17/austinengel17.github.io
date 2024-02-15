@@ -1,6 +1,6 @@
  circle.highlighted {
-        stroke: grey;
-        stroke-width: 2;
+        stroke: black;
+        stroke-width: 1.5;
       }
       .dashboard-svg {
       	display: block;
@@ -12,7 +12,8 @@
       }
 
  .dashboard-heading{
-    margin: 1%;
+    padding: 1%;
+    margin: 0;
  }
 #dashboard-table{
     justify-content: center;
@@ -25,6 +26,26 @@
 
  .dashboard{
     align-items: center;
+    background-color: rgb(203 203 203);
+    height: 100vh;
+ }
+
+.keys-container {
+    display: inline-flex;
+    margin-top: 3%;
+ }
+
+ .circle-key-container {
+    display: inline-flex;
+    padding-right: 20px;
+ }
+
+ .circle-key {
+    padding: 10px;
+ }
+
+ label.circle-key {
+    font-size: 12px;
  }
 
 /* Table Styles */
@@ -40,6 +61,7 @@ td {
     border-right: 1px solid #ddd;
     font-size: 9px;
     text-align: center;
+    background-color: white;
 }
 
 th {

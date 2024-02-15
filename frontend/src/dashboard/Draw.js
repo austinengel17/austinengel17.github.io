@@ -71,8 +71,13 @@ useEffect(() => {
           .attr("cx", 30)
           .attr("cy", 0)
           .attr("r", 10)
-          .attr("fill", "red")
+          .attr("fill", function(d,i){
+              if(i === 0 || i === 1 || i===3 || i ===4){
+                  return "white";
+              } else return "rgb(128, 128, 128)";
+          })
           .attr("id", function(d, i){return "circle-"+(i+1);})
+          .classed("milestone-circle", true)
           .on("click", handleClick);
 
           group.append("line")
@@ -124,7 +129,12 @@ useEffect(() => {
           .attr("y", 0)
           .style("font-size", "8")
           .attr("text-anchor", "middle")
-          .attr("alignment-baseline", "middle");
+          .attr("alignment-baseline", "middle")
+          .attr("fill", function(d,i){
+            if(i === 0 || i === 1 || i===3 || i ===4){
+                return "black";
+            } else return "white";
+          });
 
 
           //add final milestone circle
@@ -134,8 +144,9 @@ useEffect(() => {
             .attr("cx", 30)
             .attr("cy", 0)
             .attr("r", 10)
-            .attr("fill", "red")
+            .attr("fill", "rgb(128, 128, 128)")
             .attr("id", function(d, i){return "circle-"+(milestoneActualIntervalArr.length+1);})
+            .classed("milestone-circle", true)
             .on("click", handleClick);
 
           milestoneNGroup.append("text")
@@ -145,7 +156,8 @@ useEffect(() => {
           .attr("y", 0)
           .style("font-size", "8")
           .attr("text-anchor", "middle")
-          .attr("alignment-baseline", "middle");
+          .attr("alignment-baseline", "middle")
+          .attr("fill", "white");
 
           var activeCounter = 0;
 
@@ -214,9 +226,9 @@ useEffect(() => {
 
           m1m7LineGroup.append("text")
             .text(function(d, i) {
-                var intervalDeltas = Toolbox.getIntervalDeltas(data, "Milestone 1",  "Milestone 7");
-                var deltaMedian = Toolbox.createIntervalMedian(intervalDeltas);
-                return deltaMedian
+                var intervalArray = Toolbox.createIntervalArray("Milestone 1",  "Milestone 7", "actual", data);
+                var intervalMedian = Toolbox.createIntervalMedian(intervalArray);
+                return intervalMedian
             })
             .attr("width", 40)
             .attr("x", 430)
@@ -290,9 +302,9 @@ useEffect(() => {
 
         m7m9LineGroup.append("text")
           .text(function(d, i) {
-              var intervalDeltas = Toolbox.getIntervalDeltas(data, "Milestone 7",  "Milestone 9");
-              var deltaMedian = Toolbox.createIntervalMedian(intervalDeltas);
-              return deltaMedian
+              var intervalArray = Toolbox.createIntervalArray("Milestone 7",  "Milestone 9", "actual", data);
+              var intervalMedian = Toolbox.createIntervalMedian(intervalArray);
+              return intervalMedian
           })
           .attr("width", 40)
           .attr("x", 950)
@@ -330,7 +342,7 @@ useEffect(() => {
     console.log("table header: ", header);
       if(header.indexOf("Milestone") !== -1){
         headerRow2.append("th")
-        .text("Planned");
+        .text("Baseline");
         headerRow2.append("th")
         .text("Actual");
       }
@@ -384,7 +396,7 @@ useEffect(() => {
                   if(activeCounter === 2){
                     var highlightedCircles = d3.selectAll("circle.highlighted").nodes();
                     console.log("checkpoint 3");
-                    var indices = highlightedCircles.map(circle => d3.selectAll("circle").nodes().indexOf(circle));
+                    var indices = highlightedCircles.map(circle => d3.selectAll(".milestone-circle").nodes().indexOf(circle));
                     var specifiedIntervalArr = Toolbox.createIntervalArray("Milestone " + (indices[0] + 1), "Milestone " + (indices[1] + 1), "actual", data);
                     var specifiedIntervalMedian = Toolbox.createIntervalMedian(specifiedIntervalArr);
                     var selectedCircles = d3.selectAll("circle.highlighted").nodes();
