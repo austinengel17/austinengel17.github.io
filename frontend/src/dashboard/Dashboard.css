@@ -19,9 +19,7 @@
     margin: 0;
  }
 #dashboard-table{
-    justify-content: center;
-    display: flex;
-    width: 100%;
+    overflow-x: scroll;
 }
  #diagram {
     display: flex;
@@ -56,7 +54,6 @@ table {
     display: table;
     border-collapse: collapse;
     width: 100%;
-    align-items: center;
 }
 
 td {
@@ -119,6 +116,8 @@ tr:nth-child(even) {
     }
     table{
         width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
     }
 }
 
@@ -133,6 +132,8 @@ tr:nth-child(even) {
     }
     table{
             width: 98%;
+            margin-left: 1%;
+            margin-right: 1%;
     }
     th {
         font-size: 11px
@@ -154,5 +155,7 @@ tr:nth-child(even) {
     }
     table{
             width: 98%;
+            margin-left: 1%;
+            margin-right: 1%;
     }
 }
