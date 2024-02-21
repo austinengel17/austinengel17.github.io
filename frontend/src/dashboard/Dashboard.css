@@ -1,15 +1,18 @@
  circle.highlighted {
-        stroke: black;
-        stroke-width: 1.5;
-      }
-      .dashboard-svg {
-      	display: block;
-      	margin : 0%;
-      }
-      .dashboard-heading {
-      	display: block;
-      	margin-left: 3%;
-      }
+    stroke: black;
+    stroke-width: 1.5;
+}
+.circle-milestone-group:hover {
+    cursor: pointer;
+}
+.dashboard-svg {
+    display: block;
+    margin : 0%;
+}
+.dashboard-heading {
+    display: block;
+    margin-left: 3%;
+}
 
  .dashboard-heading{
     padding: 1%;

@@ -67,7 +67,11 @@ useEffect(() => {
             .attr("transform", function(d, i) { return "translate(" + (10 + i * 130) + ", " + yAxis + ")"; })
             .classed("milestone-group", true);;
 
-          group.append("circle")
+          var circleGroup = group.append("g")
+          .classed("circle-milestone-group", true)
+          .on("click", handleClick);
+
+          circleGroup.append("circle")
           .attr("cx", 30)
           .attr("cy", 0)
           .attr("r", 10)
@@ -77,8 +81,7 @@ useEffect(() => {
               } else return "rgb(128, 128, 128)";
           })
           .attr("id", function(d, i){return "circle-"+(i+1);})
-          .classed("milestone-circle", true)
-          .on("click", handleClick);
+          .classed("milestone-circle", true);
 
           group.append("line")
           .attr("x1", 50)
@@ -122,7 +125,7 @@ useEffect(() => {
           .attr("stroke-width", 1)
           .attr("marker-end", "url(#arrow-marker)");
 
-          group.append("text")
+          circleGroup.append("text")
           .text(function(d, i) {return "M" + (i + 1);})
           .attr("width", 100)
           .attr("x", 30) // Set the x-coordinate
@@ -139,17 +142,19 @@ useEffect(() => {
 
           //add final milestone circle
           var milestoneNGroup = svg.append("g")
-            .attr("transform", function(d, i) { return "translate(" + (10 + milestoneActualIntervalArr.length * 130) + ", " + yAxis + ")"; });
-          milestoneNGroup.append("circle")
+            .attr("transform", function(d, i) { return "translate(" + (10 + milestoneActualIntervalArr.length * 130) + ", " + yAxis + ")"; })
+            .classed("milestone-group", true);
+          var circleNGroup = milestoneNGroup.append("g")
+            .classed("circle-milestone-group", true)
+            .on("click", handleClick);
+          circleNGroup.append("circle")
             .attr("cx", 30)
             .attr("cy", 0)
             .attr("r", 10)
             .attr("fill", "rgb(128, 128, 128)")
             .attr("id", function(d, i){return "circle-"+(milestoneActualIntervalArr.length+1);})
             .classed("milestone-circle", true)
-            .on("click", handleClick);
-
-          milestoneNGroup.append("text")
+          circleNGroup.append("text")
           .text(function(d, i) {return "M" + (milestoneActualIntervalArr.length+1);})
           .attr("width", 100)
           .attr("x", 30) // Set the x-coordinate
@@ -388,20 +393,24 @@ useEffect(() => {
                 if(isActive){
                   d3.select(this).classed("highlighted", false);
                   d3.select(this.parentNode).classed("highlighted", false);
+                  d3.select(this).selectAll("circle").classed("highlighted", false);
                   activeCounter--;
                 }else if(!isActive && activeCounter < 2){
                   d3.select(this).classed("highlighted", true);
                   d3.select(this.parentNode).classed("highlighted", true);
+                  d3.select(this).selectAll("circle").classed("highlighted", true);
                   activeCounter++;
                   if(activeCounter === 2){
-                    var highlightedCircles = d3.selectAll("circle.highlighted").nodes();
+                    var highlightedCircles = d3.selectAll(".circle-milestone-group.highlighted").nodes();
                     console.log("checkpoint 3");
-                    var indices = highlightedCircles.map(circle => d3.selectAll(".milestone-circle").nodes().indexOf(circle));
+                    console.log("{highlighted circles ", highlightedCircles);
+                    var indices = highlightedCircles.map(circle => d3.selectAll(".circle-milestone-group").nodes().indexOf(circle));
+                    console.log("indices ", indices);
                     var specifiedIntervalArr = Toolbox.createIntervalArray("Milestone " + (indices[0] + 1), "Milestone " + (indices[1] + 1), "actual", data);
                     var specifiedIntervalMedian = Toolbox.createIntervalMedian(specifiedIntervalArr);
                     var selectedCircles = d3.selectAll("circle.highlighted").nodes();
-                    var selectedGroups = d3.selectAll("g.highlighted").nodes();
-                    console.log("selected groups are: " + selectedGroups[0].getAttribute("transform"));
+                    var selectedGroups = d3.selectAll("g.milestone-group.highlighted").nodes();
+                    console.log("selected groups are: " + selectedGroups);
                     var group1Transform = selectedGroups[0].getAttribute("transform");
                     var group2Transform = selectedGroups[1].getAttribute("transform");
                     var group1Convert = group1Transform.split(/[\(,]+/);
