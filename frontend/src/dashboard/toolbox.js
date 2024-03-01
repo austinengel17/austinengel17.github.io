@@ -14,29 +14,48 @@ function convertDate(dateString){
 	return new Date(year, month, day);
 }
 
-function createMilestoneArr(data){
+function getIntervalDeltas(data, milestoneA, milestoneB){ //creates array
+	var deltas = [];
+	data.forEach(function(dataNode){
+        var planned = getDifferenceDaysByDate(milestoneA, milestoneB, "planned", dataNode);
+        var actual = getDifferenceDaysByDate(milestoneA, milestoneB, "actual", dataNode);
+        console.log("actual, planned, actual - planned", actual, planned, actual - planned);
+        if(actual != null && planned != null)
+            deltas.push(actual - planned);
+	});
+	return deltas.sort(function(a,b){return a-b;});
+}
+
+function createActualArr(data){ //creates array
 	var milestoneArr = [];
-	for(var i = 1, j = 2; j < 8; i++, j++){
-		var intervalArr = createIntervalArray("Milestone " + i, "Milestone " + j, data);
+	for(var i = 1, j = 2; j < 10; i++, j++){
+		var intervalArr = createIntervalArray("Milestone " + i, "Milestone " + j, "actual", data);
 		milestoneArr.push(intervalArr);
 	}
 	return milestoneArr;
 }
 
-function createIntervalArray(milestoneA, milestoneB, data){
+function createIntervalArray(milestoneA, milestoneB, type, data){
 	var intervalArr = [];
+	console.log("data", data)
 	data.forEach(function(dataNode){
-		if(dataNode[milestoneA] && dataNode[milestoneB])
-			intervalArr.push(getDifferenceDaysByDate(milestoneA, milestoneB, dataNode));
+	    console.log("dataNode : ");
+	    console.log(dataNode , milestoneA, milestoneB);
+		if(dataNode[milestoneA][type] && dataNode[milestoneB][type])
+			intervalArr.push(getDifferenceDaysByDate(milestoneA, milestoneB, type, dataNode));
 	});
+	console.log("interval arr: " + intervalArr);
 	intervalArr = intervalArr.filter(x=>x!==undefined && x>-1);
 	console.log(milestoneA,milestoneB, intervalArr.sort(function(a,b){ return a-b; }));
 	return intervalArr.sort(function(a,b){ return a-b; });
 }
 
-function getDifferenceDaysByDate(milestoneA, milestoneB, dataNode){
-	if(dataNode[milestoneB] && dataNode[milestoneA]){
-		return Math.round((dataNode[milestoneB].getTime() - dataNode[milestoneA].getTime()) / 86400000);
+function getDifferenceDaysByDate(milestoneA, milestoneB, type, dataNode){
+    console.log(milestoneA, dataNode[milestoneA]);
+    console.log(milestoneB, dataNode[milestoneB]);
+	if(dataNode[milestoneB][type] && dataNode[milestoneA][type]){
+	    console.log("type: " + new Date(dataNode[milestoneB][type]) + "and type 2: " +  new Date(dataNode[milestoneA][type]));
+		return Math.round((new Date(dataNode[milestoneB][type]).getTime() - new Date(dataNode[milestoneA][type]).getTime()) / 86400000);
 	}
 }
 
@@ -56,7 +75,8 @@ function createIntervalMedian(intervalArr){
 
 export {
     convertDate,
-    createMilestoneArr,
+    getIntervalDeltas,
+    createActualArr,
     createIntervalArray,
     getDifferenceDaysByDate,
     createIntervalMedian
