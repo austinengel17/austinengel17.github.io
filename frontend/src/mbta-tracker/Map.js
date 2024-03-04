@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import Draw from'./draw.js';
 import Vehicles from'./Vehicles.js';
 import Select from 'react-select';
+import './Map.css';
 
 
 function Map() { 
@@ -11,6 +12,8 @@ function Map() {
   const [stationMapping, setStationMapping] = useState(null);
   const [selectedLine, setSelectedLine] = useState("Green-E");
   const [dataReady, setDataReady] = useState(false);
+  const [showVehicleStatus, setShowVehicleStatus] = useState("none");
+  const [buttonText, setButtonText] = useState("Show");
 
   var backendHost = "localhost:8080/";
   var controllerEndpoint = "mbta/v1/livemap";
@@ -81,17 +84,30 @@ useEffect(()=>{
     setSelectedLine(selectedOption.value);
     console.log(`Option selected:`, selectedOption.value);
   };
-
+  const handleShowStatusClick = () => {
+    if(showVehicleStatus === "none"){
+        setShowVehicleStatus("block");
+        setButtonText("Hide");
+    }
+    else{
+        setShowVehicleStatus("none");
+        setButtonText("Show");
+    }
+    console.log("vehicle status ", showVehicleStatus);
+  }
 
   return (
     <div className="Map">
-     <Select options={options} onChange={handleChange} placeholder={selectedLine}/>
+     <div className="selections-bar">
+        <Select options={options} onChange={handleChange} placeholder={selectedLine} className="line-select"/>
+        <button className="show-status-button" onClick={handleShowStatusClick}>{buttonText} Vehicle Status</button>
+     </div>
     {dataReady && options != null ? (
       <>
       <h2>{selectedLine}</h2>
       <svg ref={svgRef} >
         <Draw stationData={stationData} svgRef={svgRef} selectedLine={selectedLine}/>
-        <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine}/>
+        <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine} showVehicleStatus={showVehicleStatus}/>
       </svg>
       </>
     ) : (<div>Loading...</div>)

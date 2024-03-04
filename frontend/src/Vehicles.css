@@ -3,3 +3,6 @@ polygon {
         stroke-width: 1;
         */
 }
+.vehicle_status {
+    display: none;
+}

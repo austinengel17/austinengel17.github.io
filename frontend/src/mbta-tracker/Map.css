@@ -3,3 +3,17 @@
 .map{
     width: 100%;
 }
+.selections-bar {
+    display:flex;
+}
+button.show-status-button {
+    width: 20%;
+    background-color: light-grey;
+}
+button.show-status-button:hover{
+    background-color: white;
+}
+
+.line-select {
+    width: 20%;
+}
