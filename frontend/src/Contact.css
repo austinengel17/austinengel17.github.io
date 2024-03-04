@@ -35,7 +35,7 @@ textarea {
   box-sizing: border-box;
 }
 
-button {
+button.submit-button {
   background-color: #4caf50;
   color: white;
   padding: 10px;

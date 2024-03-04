@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import '../Vehicles.css';
 
 
-function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) { 
+function Vehicles({ svgRef, stationData, stationMapping, selectedLine, showVehicleStatus}) {
     const [vehicleList, setVehicleList] = useState([]);
     var backendHost = "localhost:8080/";
     var controllerEndpoint = "mbta/v1/livemap";
@@ -78,7 +78,8 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) {
             var stopId = d.stopId;
             var stopName = stationMapping[stopId];
             return d.id + " - " + d.currentStatus + ' - ' + stationData[stationMapping[stopId]] + ' - direction: ' + d.directionId;
-          });
+          })
+          .classed("vehicle_status", true);
       },
       (update) => {
         update
@@ -133,6 +134,13 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine}) {
     } 
       );
     }, [vehicleList]);
+
+    useEffect(()=>{
+        d3.selectAll(".vehicle_status")
+        .style("display", showVehicleStatus)
+    }, [showVehicleStatus]);
+
+
     //Load vehicles below
     useEffect(() => {
       const evtSource = new EventSource("http://" + backendHost + controllerEndpoint + vehiclePositionSub);
