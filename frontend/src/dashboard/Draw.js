@@ -456,6 +456,7 @@ useEffect(() => {
                   d3.selectAll("g.highlighted").classed("highlighted", false);
                   d3.select(this).classed("highlighted", true);
                   d3.select(this.parentNode).classed("highlighted", true);
+                  d3.select(this).selectAll("circle").classed("highlighted", true);
                   activeCounter = 1;
                 }
               }
