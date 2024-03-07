@@ -137,7 +137,8 @@ useEffect(() => {
             if(i === 0 || i === 1 || i===3 || i ===4){
                 return "black";
             } else return "white";
-          });
+          })
+          .classed("milestone-text", true);
 
 
           //add final milestone circle
@@ -162,7 +163,8 @@ useEffect(() => {
           .style("font-size", "8")
           .attr("text-anchor", "middle")
           .attr("alignment-baseline", "middle")
-          .attr("fill", "white");
+          .attr("fill", "white")
+          .classed("milestone-text", true);
 
           var activeCounter = 0;
 
