@@ -69,7 +69,9 @@ useEffect(() => {
 
           var circleGroup = group.append("g")
           .classed("circle-milestone-group", true)
-          .on("click", handleClick);
+          .on("click", handleClick)
+          .on("mouseover", handleMouseover)
+          .on("mouseout", handleMouseout); //Make method
 
           circleGroup.append("circle")
           .attr("cx", 30)
@@ -462,6 +464,50 @@ useEffect(() => {
                   activeCounter = 1;
                 }
               }
+
+    //handle mouseover/mouseout
+      function handleMouseover() {
+        // Define dimensions and positioning
+        const mouseoverBoxWidth = 200;
+        const mouseoverBoxHeight = 100;
+        const mouseoverBoxPadding = 10;
+        const triangleHeight = 20;
+        const triangleWidth = 10;
+
+
+        const mouseoverGroup = d3.select(this)
+        .insert("g")
+        .classed("mouseover-box", true);
+
+        mouseoverGroup.append("rect")
+        .attr("x", 35)
+        .attr("y", 20)
+        .attr("width", 60)
+        .attr("height", 20)
+        .style("fill", "rgb(128, 128, 128)");
+
+        // Draw triangle (pointy thing)
+        const trianglePoints = `35,30 30,10 40,20`;
+        mouseoverGroup.append("polygon")
+            .attr("points", trianglePoints)
+            .style("fill", "rgb(128, 128, 128)");
+
+        mouseoverGroup.append("text")
+        .style("font-size", "10px")
+        .style("fill", "white")
+        .attr("x", 65)
+        .attr("y", 30)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .text("Milestone 4");
+
+      }
+
+      function handleMouseout() {
+        const mouseoverGroup = d3.select(this)
+        .select(".mouseover-box")
+        .remove();
+      }
 
 
     //-------Dismount-------//
