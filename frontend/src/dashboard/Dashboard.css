@@ -21,6 +21,55 @@ td, th, text {
     margin-left: 3%;
 }
 
+.dashboard-dropdown-item {
+    border: 1px solid grey;
+    margin-bottom: 0;
+    background-color: rgb(128 128 128);
+    color: white;
+    height: 20px;
+}
+
+.dashboard-dropdown-item:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+
+.dashboard-dropdown {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.dashboard-dropdown.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-dropdown-layout {
+    display: flex;
+}
+
+.dashboard-dropdown-button {
+    background-color: rgb(128 128 128);
+    color: white;
+    height: 20px;
+}
+
+.dashboard-dropdown-button:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.dashboard-dropdown-box {
+   display: flex;
+}
+
+.dropdown-label {
+    padding: 0px 10px;
+}
+
  .dashboard-heading{
     padding: 1%;
     margin: 0;

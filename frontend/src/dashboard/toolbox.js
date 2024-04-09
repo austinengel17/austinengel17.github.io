@@ -73,11 +73,22 @@ function createIntervalMedian(intervalArr){
 		return intervalArr[Math.ceil(half)-1];
 }
 
+function createOptionList(data, type) {
+    console.log(data);
+    const set = new Set();
+    data.forEach(function(object) {
+        set.add(object[type]);
+        console.log(object[type]);
+    });
+    return set;
+}
+
 export {
     convertDate,
     getIntervalDeltas,
     createActualArr,
     createIntervalArray,
     getDifferenceDaysByDate,
-    createIntervalMedian
+    createIntervalMedian,
+    createOptionList
 }
