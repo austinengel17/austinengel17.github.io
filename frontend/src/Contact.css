@@ -16,6 +16,10 @@
   background-color: #fff;
 }
 
+.error-message {
+    color: red;
+}
+
 form h1 {
   text-align: center;
   color: #333;
