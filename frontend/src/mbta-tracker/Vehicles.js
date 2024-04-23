@@ -5,7 +5,7 @@ import '../Vehicles.css';
 
 function Vehicles({ svgRef, stationData, stationMapping, selectedLine, showVehicleStatus}) {
     const [vehicleList, setVehicleList] = useState([]);
-    var backendHost = "localhost:8080/";
+    var backendHost = process.env.REACT_APP_API_URL;
     var controllerEndpoint = "mbta/v1/livemap";
     var vehiclePositionSub = "/vehicle/location/" + selectedLine;
     var mbtaStopsEndpoint = "/stops/line/" + selectedLine;
@@ -143,7 +143,7 @@ function Vehicles({ svgRef, stationData, stationMapping, selectedLine, showVehic
 
     //Load vehicles below
     useEffect(() => {
-      const evtSource = new EventSource("http://" + backendHost + controllerEndpoint + vehiclePositionSub);
+      const evtSource = new EventSource(backendHost + controllerEndpoint + vehiclePositionSub);
       evtSource.onmessage = (data) => {
         var eventData = JSON.parse(data.data);
         console.log("Event data .. ", eventData);

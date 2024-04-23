@@ -5,7 +5,8 @@ import { useState } from "react";
 
 function Contact() {
 
-    const backendHost = "localhost:8080/";
+    const backendHost = process.env.REACT_APP_API_URL;
+    console.log("Backend host is : " + backendHost);
     const controllerEndpoint = "website/v1/contact";
 
     const[successfullySent, setSuccessfullySent] = useState(false);
@@ -30,7 +31,7 @@ function Contact() {
     e.preventDefault();
     console.log(formData);
 
-    const url = "http://" + backendHost + controllerEndpoint + "/email";
+    const url = backendHost + controllerEndpoint + "/email";
     console.log(`url is ${url}`);
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");

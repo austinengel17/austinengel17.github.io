@@ -15,7 +15,7 @@ function Map() {
   const [showVehicleStatus, setShowVehicleStatus] = useState("none");
   const [buttonText, setButtonText] = useState("Show");
 
-  var backendHost = "localhost:8080/";
+  var backendHost = process.env.REACT_APP_API_URL;
   var controllerEndpoint = "mbta/v1/livemap";
   var vehiclePositionSub = "/vehicle/location/" + selectedLine;
   var mbtaStopsEndpoint = "/stops/line/" + selectedLine;
@@ -34,7 +34,7 @@ setDataReady(false);
 ////////////////////////////////////////////////////////////
   var xhr = new XMLHttpRequest();//
     // Making our connection 
-  var url = "http://" + backendHost + controllerEndpoint + mbtaStopsEndpoint;
+  var url = backendHost + controllerEndpoint + mbtaStopsEndpoint;
   xhr.open("GET", url, true);
  
     // function execute after request is successful
@@ -56,7 +56,7 @@ setDataReady(false);
 ///////////////////////////////////////////
   var xhr2 = new XMLHttpRequest();
     // Making our connection 
-  var url2 = "http://" + backendHost + controllerEndpoint + stationMappingEndpoint;
+  var url2 = backendHost + controllerEndpoint + stationMappingEndpoint;
   xhr2.open("GET", url2, true);
     // function execute after request is successful
   xhr2.onreadystatechange = function () {
