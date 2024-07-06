@@ -33,6 +33,14 @@ function Dashboard(){
                         `<Draw dataset={dataset} svgRef={svgRef}/>
                     </svg>
                     <div id='dashboard-table'></div>
+                    <div className="dashboard-summary">
+                        <h3> Description: </h3>
+                        <p>
+                            This an example dashboard that shows the turn-around time of clinical trials.
+                            Each arrow value represents the median number of days taken to get from milestone x to milestone y.
+                            The arrow colors show the difference between interval medians of "Actual" days and their expected completion dates. Click on two milestone circles to get a custom median!
+                        </p>
+                    </div>
                 </div>
             )
             :

@@ -10,7 +10,7 @@ function Map() {
   const svgRef = useRef(null);
   const [stationData, setStationData] = useState(null);
   const [stationMapping, setStationMapping] = useState(null);
-  const [selectedLine, setSelectedLine] = useState("Green-E");
+  const [selectedLine, setSelectedLine] = useState("Green-C");
   const [dataReady, setDataReady] = useState(false);
   const [showVehicleStatus, setShowVehicleStatus] = useState("none");
   const [buttonText, setButtonText] = useState("Show");
@@ -97,24 +97,34 @@ useEffect(()=>{
   }
 
   return (
-    <div className="Map">
-     <div className="selections-bar">
-        <Select options={options} onChange={handleChange} placeholder={selectedLine} className="line-select"/>
-        <button className="show-status-button" onClick={handleShowStatusClick}>{buttonText} Vehicle Status</button>
-     </div>
-    {dataReady && options != null ? (
-      <>
-      <h2>{selectedLine}</h2>
-      <svg ref={svgRef} >
-        <Draw stationData={stationData} svgRef={svgRef} selectedLine={selectedLine}/>
-        <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine} showVehicleStatus={showVehicleStatus}/>
-      </svg>
-      </>
-    ) : (<div>Loading...</div>)
-    }
+    <div className="map-container">
+        <div className="Map">
+         <div className="selections-bar">
+            <Select options={options} onChange={handleChange} placeholder={selectedLine} className="line-select"/>
+            <button className="show-status-button" onClick={handleShowStatusClick}>{buttonText} Vehicle Status</button>
+         </div>
+        {dataReady && options != null ? (
+          <>
+          <h2>{selectedLine}</h2>
+          <svg ref={svgRef} >
+            <Draw stationData={stationData} svgRef={svgRef} selectedLine={selectedLine}/>
+            <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine} showVehicleStatus={showVehicleStatus}/>
+          </svg>
+          </>
+        ) : (<div id="mbta-loading"><p>Loading... <br/>(app server is waking up)</p></div>)
+        }
+        </div>
+        <div id="mbtaapp-summary">
+            <h3>Description</h3>
+            <p className="app-summary">
+                There are three railcar statuses: "STOPPED_AT", "INCOMING_AT", and "IN_TRANSIT_TO". The railcars are displayed in different position on the line based on the three statuses.
+                The graphic is updated through D3.js processing of data emitted by server-sent events from my backend application. This application was created with React.js, D3.js, Spring WebFlux, and JSX.
+            </p>
+            <p>
+            </p>
+        </div>
     </div>
   );
-
 }
 
 export default Map;

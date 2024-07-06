@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <h1>MBTA Subway Rail Tracker</h1>
+    <h1 id="mbta-header">MBTA Subway Rail Tracker</h1>
   );
 }
 

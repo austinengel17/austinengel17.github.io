@@ -13,6 +13,15 @@ button.show-status-button {
 button.show-status-button:hover{
     background-color: white;
 }
+.Map > *:not(svg), #mbtaapp-summary, #mbta-header {
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+#mbta-loading {
+    padding-top:50px;
+    padding-bottom:50px;
+}
 
 .line-select {
     width: 20%;

@@ -5,6 +5,10 @@
 .circle-milestone-group:hover {
     cursor: pointer;
 }
+.dashboard-summary {
+  padding-left: 10px;
+  padding-right: 20px;
+}
 td, th, text {
     cursor: default;
     user-select: none;

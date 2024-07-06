@@ -17,7 +17,7 @@ const Navbar = () => {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <div className="border"></div>
-        <li><Link to="/map">Map</Link></li>
+        <li><Link to="/map">MBTAMap</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li>
       </ul>
       <div className="dropdown-toggle" onClick={handleDropdownToggle}>

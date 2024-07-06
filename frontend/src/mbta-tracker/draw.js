@@ -9,7 +9,7 @@ import * as d3 from "d3";
   useEffect(()=>{
 
     var svg = d3.select(svgRef.current)
-    .attr("viewBox", `0 0 ${30 + stationData.length * 60} 400`)
+    .attr("viewBox", `0 50 ${30 + stationData.length * 60} 275`)
     .attr("preserveAspectRatio", "xMidYMid meet");
 
     //create stations//

@@ -19,7 +19,7 @@ function About() {
           </section>
 
           <section className="skills-section">
-            <div class="skills-column">
+            <div className="skills-column">
                 <h2>Skills</h2>
                 <ul>
                   <li>Java</li>
@@ -31,7 +31,7 @@ function About() {
                   <li>HTML5, CSS3</li>
                 </ul>
             </div>
-            <div class="tools-column">
+            <div className="tools-column">
                 <h2>Tools</h2>
                 <ul>
                     <li>Cloudflare</li>
@@ -51,13 +51,13 @@ function About() {
                     08/2021 - present
                 </p>
                 <p>
-                    In this role I act as a primary developer for TechTarget's "Vignette" websites. This includes constructing and maintaining webpages and sites,
-                    building supporting apps, scripts and projects, and monitoring and investigating errors and performance issues. In this role I also stay in close contact with the SEO team to provide technical guidance and support.
-                    I am often digging into all aspects of our web applications, from server-side to client-side to database management, giving me a full perspective of our products.
+                    In this role I act as a primary developer for TechTarget's websites. This includes constructing and maintaining websites,
+                    building supporting apps, scripts and projects, and also, monitoring and investigating performance issues and errors. I also stay in close contact with the SEO team to provide technical guidance and support.
+                    I am often digging into all aspects of our web applications, from server-side development and configuration, to client-side scripting and templating, to database management. This allows me a full perspective of our products.
                 </p>
             </div>
             <div className="experience-item">
-                <h3>Mayflower Interactive - Software Engineer (Part-Time)</h3>
+                <h3>Mayflower Interactive - Software Engineer</h3>
                 <p>
                     02/2021 - 06/2021
                 </p>
@@ -80,7 +80,7 @@ function About() {
           <section className="interests-section">
             <h2>Interests</h2>
             <p>
-              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, and playing music.
+              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, exercise, and making music.
             </p>
           </section>
         </div>

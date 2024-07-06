@@ -6,10 +6,9 @@ function Home() {
     return(
         <>
             <h1 class="homepage-heading">Welcome!</h1>
-            <h4 class="homepage-updates">!!!Updates: !!!</h4>
+            <h4 class="homepage-updates">Updates:</h4>
             <ul class="homepage-update-list">
-                <li>MBTA live subway tracking app in the navbar as "Map" is under construction while migrating to cloud server</li>
-                <li>Contact page is under construction while migrating to cloud server</li>
+                <li>MBTA railcar tracking app v1.0 is now up and running, try it out!</li>
             </ul>
         </>
     );
