@@ -24,7 +24,7 @@ function Map() {
     //{ value: 'Green-A', label: 'Green-A' },
     //{ value: 'Green-B', label: 'Green-B' }, closed line 
     { value: 'Green-C', label: 'Green-C' }, 
-//    { value: 'Green-D', label: 'Green-D' }, //stop #71199 not in mapping, where the hell is it
+//    { value: 'Green-D', label: 'Green-D' }, //stop #71199 not in mapping (not being sent in /stops api call, but is being sent in updates from mbta api), where the hell is it
     { value: 'Green-E', label: 'Green-E' },
 //    { value: 'Orange', label: 'Orange' },
   ];
@@ -104,21 +104,21 @@ useEffect(()=>{
             <button className="show-status-button" onClick={handleShowStatusClick}>{buttonText} Vehicle Status</button>
          </div>
         {dataReady && options != null ? (
-          <>
-          <h2>{selectedLine}</h2>
-          <svg ref={svgRef} >
-            <Draw stationData={stationData} svgRef={svgRef} selectedLine={selectedLine}/>
-            <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine} showVehicleStatus={showVehicleStatus}/>
-          </svg>
-          </>
-        ) : (<div id="mbta-loading"><p>Loading... <br/>(app server is waking up)</p></div>)
+              <>
+              <h2>{selectedLine}</h2>
+              <svg ref={svgRef} >
+                <Draw stationData={stationData} svgRef={svgRef} selectedLine={selectedLine}/>
+                <Vehicles svgRef={svgRef} stationData={stationData} stationMapping={stationMapping} selectedLine={selectedLine} showVehicleStatus={showVehicleStatus}/>
+              </svg>
+              </>
+          ) : (<div id="mbta-loading"><p>Loading... <br/>(please wait.. app server is waking up)</p></div>)
         }
         </div>
         <div id="mbtaapp-summary">
             <h3>Description</h3>
             <p className="app-summary">
-                There are three railcar statuses: "STOPPED_AT", "INCOMING_AT", and "IN_TRANSIT_TO". The railcars are displayed in different position on the line based on the three statuses.
-                The graphic is updated through D3.js processing of data emitted by server-sent events from my backend application. This application was created with React.js, D3.js, Spring WebFlux, and JSX.
+                There are three railcar statuses: "STOPPED_AT", "INCOMING_AT", and "IN_TRANSIT_TO". Based on the three statuses, the railcars are displayed in different position on the line.
+                The graphic is updated through D3.js processing of data emitted by server-sent events from my backend application. This means the cars move every time a status is updated. This application was created with React.js, D3.js, Spring WebFlux, and JSX.
             </p>
             <p>
             </p>

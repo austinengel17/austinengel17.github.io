@@ -35,10 +35,10 @@ function Dashboard(){
                     <div id='dashboard-table'></div>
                     <div className="dashboard-summary">
                         <h3> Description: </h3>
-                        <p>
-                            This an example dashboard that shows the turn-around time of clinical trials.
+                        <p className="summary-paragraph">
+                            This a dashboard that displays the turn-around time (in days) for clinical trials (currently using sample data).
                             Each arrow value represents the median number of days taken to get from milestone x to milestone y.
-                            The arrow colors show the difference between interval medians of "Actual" days and their expected completion dates. Click on two milestone circles to get a custom median!
+                            The arrow colors show the difference between interval medians of "Actual" days and their expected completion dates by using green, yellow and red coloring. Click on two milestone circles to get a custom median!
                         </p>
                     </div>
                 </div>

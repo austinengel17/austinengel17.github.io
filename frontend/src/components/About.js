@@ -11,7 +11,7 @@ function About() {
               I specialize in building web applications and have a strong foundation in Java, JavaScript, RESTful APIs, both SQL and NoSQL, and much more.
             </p>
             <p>
-              With two and a half years of experience, I have worked on a variety of projects, ranging from website construction,
+              With three years of experience, I have worked on a variety of projects, ranging from website and API construction,
               integrating google AI data modeling with analytics, and automating text and hyperlink integrity inspection for content modification script runs.
               My goal is to create efficient and user-friendly solutions that make a positive impact. I'm always eager to learn and grow in the ever-evolving
               field of software development.
@@ -54,6 +54,18 @@ function About() {
                     In this role I act as a primary developer for TechTarget's websites. This includes constructing and maintaining websites,
                     building supporting apps, scripts and projects, and also, monitoring and investigating performance issues and errors. I also stay in close contact with the SEO team to provide technical guidance and support.
                     I am often digging into all aspects of our web applications, from server-side development and configuration, to client-side scripting and templating, to database management. This allows me a full perspective of our products.
+                </p>
+                <p>
+                   Involved Skills: Critical thinking, communication, leadership, time management
+                </p>
+                <p>
+                   Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr(noSQL), Tomcat, Apache HTTP
+                </p>
+                <p>
+                   Involved Skills: Critical thinking, communication, leadership, time management
+                </p>
+                <p>
+                   Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr(noSQL), Tomcat, Apache HTTP
                 </p>
             </div>
             <div className="experience-item">
