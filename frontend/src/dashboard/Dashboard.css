@@ -5,6 +5,15 @@
 .circle-milestone-group:hover {
     cursor: pointer;
 }
+.dashboard-summary {
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.dashboard-summary .summary-paragraph {
+    margin-bottom: 0;
+}
 td, th, text {
     cursor: default;
     user-select: none;
@@ -35,7 +44,6 @@ td, th, text {
  .dashboard{
     align-items: center;
     background-color: rgb(203 203 203);
-    height: 100vh;
  }
 
 .keys-container {
