@@ -51,9 +51,15 @@ function About() {
                     08/2021 - present
                 </p>
                 <p>
-                    In this role I act as a primary developer for TechTarget's "Vignette" websites. This includes constructing and maintaining webpages and sites,
+                    In this role I act as a primary developer for TechTarget's websites. This includes constructing and maintaining webpages and sites,
                     building supporting apps, scripts and projects, and monitoring and investigating errors and performance issues. In this role I also stay in close contact with the SEO team to provide technical guidance and support.
                     I am often digging into all aspects of our web applications, from server-side to client-side to database management, giving me a full perspective of our products.
+                </p>
+                <p>
+                   Involved Skills: Critical thinking, communication, leadership, time management
+                </p>
+                <p>
+                   Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr(noSQL), Tomcat, Apache HTTP
                 </p>
                 <p>
                    Involved Skills: Critical thinking, communication, leadership, time management
