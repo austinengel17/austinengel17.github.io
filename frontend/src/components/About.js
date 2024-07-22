@@ -61,12 +61,6 @@ function About() {
                 <p>
                    Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr(noSQL), Tomcat, Apache HTTP
                 </p>
-                <p>
-                   Involved Skills: Critical thinking, communication, leadership, time management
-                </p>
-                <p>
-                   Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr(noSQL), Tomcat, Apache HTTP
-                </p>
             </div>
             <div className="experience-item">
                 <h3>Mayflower Interactive - Software Engineer (Part-Time)</h3>
