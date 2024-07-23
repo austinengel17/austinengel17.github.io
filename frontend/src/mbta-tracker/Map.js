@@ -14,7 +14,7 @@ function Map() {
   const [dataReady, setDataReady] = useState(false);
   const [showVehicleStatus, setShowVehicleStatus] = useState("none");
   const [buttonText, setButtonText] = useState("Show");
-  var maxRetries = 5;
+  var maxRetries = 10;
   var xhr1Attempt = 0;
   var xhr2Attempt = 0;
 
@@ -68,11 +68,19 @@ useEffect(()=>{
       // function execute after request is successful
     xhr.onreadystatechange = function () {
       console.log("hi");
-      if (this.readyState == 4 && this.status == 200) {
-          var temp = JSON.parse(this.responseText);
-          var stationDataTemp = Object.keys(temp).map(v => ({[v.replace(/['"]+/g, '')]: {...temp[v]}}));
-          console.log(stationDataTemp);
-          setStationData(stationDataTemp);
+      if(this.readyState == XMLHttpRequest.DONE){
+          if (this.status >= 200 && this.status < 300) {
+              var temp = JSON.parse(this.responseText);
+              var stationDataTemp = Object.keys(temp).map(v => ({[v.replace(/['"]+/g, '')]: {...temp[v]}}));
+              console.log(stationDataTemp);
+              setStationData(stationDataTemp);
+          } else {
+              if(xhr1Attempt < maxRetries){
+                  console.log("retrying station mapping request, req #: " + (xhr1Attempt + 1));
+                  xhr1Attempt++;
+                  setTimeout(getMbtaStops, 1000);
+              }
+          }
       }
     }
     xhr.onerror = function (error){
@@ -80,7 +88,7 @@ useEffect(()=>{
             console.error(error);
             console.log("retrying station mapping request, req #: " + (xhr1Attempt + 1));
             xhr1Attempt++;
-            setTimeout(getMbtaStops, 10000);
+            setTimeout(getMbtaStops, 1000);
          }
     };
     xhr.send();
@@ -92,10 +100,18 @@ useEffect(()=>{
         xhr2.open("GET", url2, true);
         xhr2.onreadystatechange = function () {
           console.log("hi");
-          if (this.readyState == 4 && this.status == 200) {
-              var temp = JSON.parse(this.responseText);
-              console.log("mapping .. :", temp);
-              setStationMapping(temp);
+          if (this.readyState == XMLHttpRequest.DONE) {
+              if (this.status >= 200 && this.status < 300) {
+                  var temp = JSON.parse(this.responseText);
+                  console.log("mapping .. :", temp);
+                  setStationMapping(temp);
+              } else {
+                  if(xhr2Attempt < maxRetries){
+                    console.log("retrying station mapping request, req #: " + (xhr2Attempt + 1));
+                    xhr2Attempt++;
+                    setTimeout(getMbtaStations, 1000);
+                  }
+              }
           }
         }
         xhr2.onerror = function (error){
@@ -103,7 +119,7 @@ useEffect(()=>{
               console.error(error);
               console.log("retrying station mapping request, req #: " + (xhr2Attempt + 1));
               xhr2Attempt++;
-              setTimeout(getMbtaStations, 10000);
+              setTimeout(getMbtaStations, 1000);
             }
           };
         xhr2.send();
