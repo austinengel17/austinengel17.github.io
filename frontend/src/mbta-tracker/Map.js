@@ -14,6 +14,9 @@ function Map() {
   const [dataReady, setDataReady] = useState(false);
   const [showVehicleStatus, setShowVehicleStatus] = useState("none");
   const [buttonText, setButtonText] = useState("Show");
+  var maxRetries = 5;
+  var xhr1Attempt = 0;
+  var xhr2Attempt = 0;
 
   var backendHost = process.env.REACT_APP_API_URL;
   var controllerEndpoint = "mbta/v1/livemap";
@@ -31,48 +34,9 @@ function Map() {
 
 useEffect(()=>{
 setDataReady(false);
-////////////////////////////////////////////////////////////
-  var xhr = new XMLHttpRequest();//
-    // Making our connection 
-  var url = backendHost + controllerEndpoint + mbtaStopsEndpoint;
-  xhr.open("GET", url, true);
- 
-    // function execute after request is successful
-  xhr.onreadystatechange = function () {
-    console.log("hi");
-    if (this.readyState == 4 && this.status == 200) {
-        var temp = JSON.parse(this.responseText);
-        var stationDataTemp = Object.keys(temp).map(v => ({[v.replace(/['"]+/g, '')]: {...temp[v]}}));
-        console.log(stationDataTemp);
-        setStationData(stationDataTemp);     
-    }
-  }
-  xhr.onerror = function (error){
-      console.error(error);
-    };
-  xhr.send();
-  console.log("sent #1");
 
-///////////////////////////////////////////
-  var xhr2 = new XMLHttpRequest();
-    // Making our connection 
-  var url2 = backendHost + controllerEndpoint + stationMappingEndpoint;
-  xhr2.open("GET", url2, true);
-    // function execute after request is successful
-  xhr2.onreadystatechange = function () {
-    console.log("hi");
-    if (this.readyState == 4 && this.status == 200) {
-        var temp = JSON.parse(this.responseText);
-        console.log("mapping .. :", temp);
-        setStationMapping(temp);      
-    }
-  }
-  xhr2.onerror = function (error){
-      console.error(error);
-    };
-  xhr2.send();
-  console.log("sent #2");
-/////////////////////////
+  getMbtaStops();
+  getMbtaStations();
 },[selectedLine]);
 
 useEffect(()=>{
@@ -94,6 +58,55 @@ useEffect(()=>{
         setButtonText("Show");
     }
     console.log("vehicle status ", showVehicleStatus);
+  }
+
+  function getMbtaStops(){
+    var xhr = new XMLHttpRequest();
+    var url = backendHost + controllerEndpoint + mbtaStopsEndpoint;
+    xhr.open("GET", url, true);
+
+      // function execute after request is successful
+    xhr.onreadystatechange = function () {
+      console.log("hi");
+      if (this.readyState == 4 && this.status == 200) {
+          var temp = JSON.parse(this.responseText);
+          var stationDataTemp = Object.keys(temp).map(v => ({[v.replace(/['"]+/g, '')]: {...temp[v]}}));
+          console.log(stationDataTemp);
+          setStationData(stationDataTemp);
+      }
+    }
+    xhr.onerror = function (error){
+         if(xhr1Attempt < maxRetries){
+            console.error(error);
+            console.log("retrying station mapping request, req #: " + (xhr1Attempt + 1));
+            xhr1Attempt++;
+            setTimeout(getMbtaStops, 10000);
+         }
+    };
+    xhr.send();
+  }
+
+  function getMbtaStations(){
+        var xhr2 = new XMLHttpRequest();
+        var url2 = backendHost + controllerEndpoint + stationMappingEndpoint;
+        xhr2.open("GET", url2, true);
+        xhr2.onreadystatechange = function () {
+          console.log("hi");
+          if (this.readyState == 4 && this.status == 200) {
+              var temp = JSON.parse(this.responseText);
+              console.log("mapping .. :", temp);
+              setStationMapping(temp);
+          }
+        }
+        xhr2.onerror = function (error){
+            if(xhr2Attempt < maxRetries){
+              console.error(error);
+              console.log("retrying station mapping request, req #: " + (xhr2Attempt + 1));
+              xhr2Attempt++;
+              setTimeout(getMbtaStations, 10000);
+            }
+          };
+        xhr2.send();
   }
 
   return (
