@@ -51,9 +51,9 @@ function About() {
                     08/2021 - present
                 </p>
                 <p>
-                    In this role I act as a primary developer for TechTarget's websites. This includes constructing and maintaining webpages and sites,
-                    building supporting apps, scripts and projects, and monitoring and investigating errors and performance issues. In this role I also stay in close contact with the SEO team to provide technical guidance and support.
-                    I am often digging into all aspects of our web applications, from server-side to client-side to database management, giving me a full perspective of our products.
+                    In this role I act as a primary developer for TechTarget's websites. This includes constructing and maintaining websites,
+                    building supporting apps and scripts, and also, monitoring and investigating performance issues and errors. I also stay in close contact with the SEO team to provide technical guidance and support.
+                    I am often digging into all aspects of our web applications, from server-side development and configuration, to client-side scripting and templating, to database management. This allows me a full perspective of our products.
                 </p>
                 <p>
                    Involved Skills: Critical thinking, communication, leadership, time management
@@ -66,6 +66,16 @@ function About() {
                 <h3>Mayflower Interactive - Software Engineer (Part-Time)</h3>
                 <p>
                     02/2021 - 06/2021
+                </p>
+                <p>
+                    Met with clients to understand their vision and requirements for their sites. Crafted design proofs according to demands and presented them to customers.
+                    Built web pages for small-medium sized clients using JavaScript (Node.js), MongoDB, HTML and CSS.
+                </p>
+                <p>
+                   Involved Skills: Collaboration, Initiative
+                </p>
+                <p>
+                   Tech Stack: Node.js, JavaScript, MongoDB
                 </p>
             </div>
           </section>
