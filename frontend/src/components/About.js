@@ -20,12 +20,12 @@ function About() {
 
           <section className="skills-section">
             <div className="skills-column">
-                <h2>Skills</h2>
+                <h2>Languages & Frameworks</h2>
                 <ul>
                   <li>Java</li>
                   <li>JavaScript (ES6+)</li>
-                  <li>Postgres</li>
-                  <li>Solr</li>
+                  <li>PostgreSQL</li>
+                  <li>Solr (noSQL)</li>
                   <li>React.js</li>
                   <li>Node.js</li>
                   <li>HTML5, CSS3</li>
@@ -59,7 +59,7 @@ function About() {
                    Involved Skills: Critical thinking, communication, leadership, time management
                 </p>
                 <p>
-                   Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr(noSQL), Tomcat, Apache HTTP
+                   Tech Stack: Java/Spring, JavaScript, JSP/JSTL, PostgreSQL, Apache Solr (noSQL), Tomcat, Apache HTTP
                 </p>
             </div>
             <div className="experience-item">
@@ -96,7 +96,7 @@ function About() {
           <section className="interests-section">
             <h2>Interests</h2>
             <p>
-              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, exercise, and making music.
+              Apart from coding, I enjoy a wide variety of outdoor activities, traveling, and exercise.
             </p>
           </section>
         </div>
