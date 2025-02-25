@@ -1,0 +1,32 @@
+/* Default styles */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
+.homepageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15%;
+    padding: 15%;
+}
+
+homepageIntroduction {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .homepageIntroduction {
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .homepageIntroduction {
+        font-size: 12px;
+    }
+
+}

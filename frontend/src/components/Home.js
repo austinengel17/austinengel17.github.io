@@ -1,15 +1,17 @@
 import Navbar from './Navbar';
-import '../Home.css';
+import classes from '../Home.module.css';
 function Home() {
 
 
     return(
         <>
-            <h1 class="homepage-heading">Welcome!</h1>
-            <h4 class="homepage-updates">Updates:</h4>
-            <ul class="homepage-update-list">
-                <li>MBTA railcar tracking app v1.0 is now up and running, try it out!</li>
-            </ul>
+            <div className={`${classes.homepageSection}`}>
+                <p className={`${classes.homepageIntroduction}`}>
+                    Hi, I&apos;m Austin, a dedicated and creative software engineer based in Boston, Massachusetts.
+                    I specialize in building web applications and have a strong foundation in Java, JavaScript, RESTful API&apos;s,
+                    both SQL and NoSQL, and much more.
+                </p>
+            </div>
         </>
     );
 }
