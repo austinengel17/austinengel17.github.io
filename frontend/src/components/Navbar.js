@@ -18,7 +18,7 @@ const Navbar = () => {
         <li><Link to="/contact">Contact</Link></li>
         <div className="border"></div>
         <li><Link to="/map">MBTA Tracker</Link></li>
-        <li><Link to="/dashboard">TAT Dashboard</Link></li>
+        <li><Link to="/dashboard">Cycle Dashboard</Link></li>
       </ul>
       <div className="dropdown-toggle" onClick={handleDropdownToggle}>
         <img src={process.env.PUBLIC_URL + '/hamburger.png'} alt="Icon"/>
