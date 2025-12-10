@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import * as d3 from "d3";
-import '../Vehicles.css';
+import './Vehicles.css';
 
 
 function Vehicles({ svgRef, stationData, stationMapping, selectedLine, showVehicleStatus}) {

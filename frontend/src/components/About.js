@@ -1,5 +1,5 @@
 import React from 'react';
-import '../About.css'; // Import your CSS file for styling
+import '../styles/About.css';
 function About() {
   return (
     <>
@@ -11,7 +11,7 @@ function About() {
               I specialize in building web applications and have a strong foundation in Java, JavaScript, RESTful APIs, both SQL and NoSQL, and much more.
             </p>
             <p>
-              With three years of experience, I have worked on a variety of projects, ranging from website and API construction,
+              With four years of experience, I have worked on a variety of projects, ranging from website and API construction,
               integrating google AI data modeling with analytics, and automating text and hyperlink integrity inspection for content modification script runs.
               My goal is to create efficient and user-friendly solutions that make a positive impact. I'm always eager to learn and grow in the ever-evolving
               field of software development.
